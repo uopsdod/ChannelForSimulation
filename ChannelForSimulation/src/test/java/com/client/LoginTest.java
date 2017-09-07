@@ -1,4 +1,4 @@
-package com.test;
+package com.client;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,6 +14,7 @@ import com.util.TestUtil;
 import com.util.Util;
 
 @RunWith(SpringRunner.class)
+
 @SpringBootTest
 public class LoginTest {
 	@Test
