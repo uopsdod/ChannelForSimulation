@@ -88,4 +88,15 @@ public class BeanGenerator {
 		return util;
 	}
 	
+	/**
+	 * for dashboard thread
+	 * @return
+	 */
+	@Bean
+	public ScheduledExecutorService scheduledExecutorService(){
+		int threadNumber = 5;
+		ScheduledExecutorService executor = Executors.newScheduledThreadPool(threadNumber);
+		return executor;
+	}
+	
 }

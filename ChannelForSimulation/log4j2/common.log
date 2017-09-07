@@ -287,3 +287,33 @@
 [17/09/07 17:20:43.100][ INFO][com.channel.ChannelMessageListener -33   ] - IN process_BACKEND_TO_WECHAT_QUEUE - aMsg: {"key01":"value01"}
 [17/09/07 17:20:43.102][ INFO][com.channel.ChannelMessageListener -55   ] - Event: null
 [17/09/07 17:20:43.103][ INFO][com.channel.ChannelMessageListener -56   ] - userID: null
+[17/09/07 17:47:11.572][ INFO][com.util.Util                      -63   ] - Util() start
+[17/09/07 17:47:11.578][ INFO][com.util.Util                      -66   ] - Util - YourProjectName version: v1.0.0
+[17/09/07 17:47:11.579][ INFO][com.util.Util                      -67   ] - Util() end
+[17/09/07 17:47:12.994][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/09/07 17:47:13.241][ INFO][com.filter.ApplicationListenerBean -24   ] - ContextRefreshedEvent start ###################
+[17/09/07 17:47:13.242][ INFO][com.filter.ApplicationListenerBean -30   ] - ContextRefreshedEvent end ###################
+[17/09/07 17:47:13.277][ INFO][com.bean.GetEntityTypeAsListCallable-42   ] - getEntityTypeAsList starts
+[17/09/07 17:47:13.278][ INFO][com.bean.GetEntityTypeAsListCallable-51   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/09/07 17:47:13.428][ INFO][com.channel.ChannelMessageListener -23   ] - IN BACKEND_TO_VOICE_QUEUE starts
+[17/09/07 17:47:13.429][ INFO][com.channel.ChannelMessageListener -24   ] - IN BACKEND_TO_VOICE_QUEUE - aByteMsg: (Body:'{"key01":"value01"}' MessageProperties [headers={}, timestamp=null, messageId=null, userId=null, receivedUserId=null, appId=null, clusterId=null, type=null, correlationId=null, correlationIdString=null, replyTo=null, contentType=text/plain, contentEncoding=UTF-8, contentLength=0, deliveryMode=null, receivedDeliveryMode=PERSISTENT, expiration=null, priority=0, redelivered=false, receivedExchange=, receivedRoutingKey=BACKEND_TO_VOICE_QUEUE, receivedDelay=null, deliveryTag=1, messageCount=0, consumerTag=amq.ctag-vzT-CMNY-2KNAToyINibKQ, consumerQueue=BACKEND_TO_VOICE_QUEUE])
+[17/09/07 17:47:13.430][ INFO][com.channel.ChannelMessageListener -33   ] - IN process_BACKEND_TO_WECHAT_QUEUE - aMsg: {"key01":"value01"}
+[17/09/07 17:47:13.435][ INFO][com.channel.ChannelMessageListener -55   ] - Event: null
+[17/09/07 17:47:13.436][ INFO][com.channel.ChannelMessageListener -56   ] - userID: null
+[17/09/07 17:47:13.550][ INFO][com.bean.GetEntityTypeAsListCallable-58   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/09/07 17:47:13.550][ INFO][com.bean.GetEntityTypeAsListCallable-60   ] - getEntityTypeAsList ends
+[17/09/07 17:48:01.153][ INFO][com.util.Util                      -63   ] - Util() start
+[17/09/07 17:48:01.163][ INFO][com.util.Util                      -66   ] - Util - YourProjectName version: v1.0.0
+[17/09/07 17:48:01.164][ INFO][com.util.Util                      -67   ] - Util() end
+[17/09/07 17:48:02.127][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/09/07 17:48:02.283][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/09/07 17:48:02.289][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/09/07 17:48:02.327][ INFO][com.bean.GetEntityTypeAsListCallable-42   ] - getEntityTypeAsList starts
+[17/09/07 17:48:02.328][ INFO][com.bean.GetEntityTypeAsListCallable-51   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/09/07 17:48:02.588][ INFO][com.channel.ChannelMessageListener -23   ] - IN BACKEND_TO_VOICE_QUEUE starts
+[17/09/07 17:48:02.589][ INFO][com.channel.ChannelMessageListener -24   ] - IN BACKEND_TO_VOICE_QUEUE - aByteMsg: (Body:'{"key01":"value01"}' MessageProperties [headers={}, timestamp=null, messageId=null, userId=null, receivedUserId=null, appId=null, clusterId=null, type=null, correlationId=null, correlationIdString=null, replyTo=null, contentType=text/plain, contentEncoding=UTF-8, contentLength=0, deliveryMode=null, receivedDeliveryMode=PERSISTENT, expiration=null, priority=0, redelivered=false, receivedExchange=, receivedRoutingKey=BACKEND_TO_VOICE_QUEUE, receivedDelay=null, deliveryTag=1, messageCount=0, consumerTag=amq.ctag-WUbkLSRKRl9vLrJWnK8hBA, consumerQueue=BACKEND_TO_VOICE_QUEUE])
+[17/09/07 17:48:02.589][ INFO][com.channel.ChannelMessageListener -33   ] - IN process_BACKEND_TO_WECHAT_QUEUE - aMsg: {"key01":"value01"}
+[17/09/07 17:48:02.601][ INFO][com.channel.ChannelMessageListener -55   ] - Event: null
+[17/09/07 17:48:02.602][ INFO][com.channel.ChannelMessageListener -56   ] - userID: null
+[17/09/07 17:48:02.771][ INFO][com.bean.GetEntityTypeAsListCallable-58   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/09/07 17:48:02.772][ INFO][com.bean.GetEntityTypeAsListCallable-60   ] - getEntityTypeAsList ends

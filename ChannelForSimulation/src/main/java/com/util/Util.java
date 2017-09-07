@@ -1,7 +1,19 @@
 package com.util;
  
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.AbstractMap;
 import java.util.Base64;
 import java.util.HashMap;
@@ -133,4 +145,120 @@ public class Util {
         return value;
     }
 
+	public static String getHostURLStr(String aHost){
+		
+		String protocol = Attr.SystemParam.get(aHost + "_protocol");
+		String hostname = Attr.SystemParam.get(aHost + "_hostname");
+		String port = Attr.SystemParam.get(aHost + "_port");
+		
+		return protocol + "//" + hostname + ":" + port;
+	}
+	
+	public static String getProjectStr(String aHost){
+		String projectName = Attr.SystemParam.get(aHost + "_project");
+		return projectName;
+	}
+	
+    public static String sendHttpPostRequest(String aUrlStr, Charset aCharset, List<AbstractMap.SimpleEntry<String, String>> aPostDataList){
+//		Util.getFileLogger().info("sendHttpPostRequest start");
+//		Util.getFileLogger().info("sendHttpPostRequest input - aUrlStr: " + aUrlStr);
+//		Util.getFileLogger().info("sendHttpPostRequest input - aCharset: " + aCharset.name());
+//		Util.getFileLogger().info("sendHttpPostRequest input - aPostDataList: " + aPostDataList);
+		StringBuilder responseSB = new StringBuilder();
+		
+		/** 建立URL物件 **/
+		URL url = null;
+		try {
+			url = new URL( aUrlStr );
+//			Util.getFileLogger().info("url: " + url.toString());
+		} catch (MalformedURLException e) {
+			Util.getFileLogger().info("sendHttpPostRequest() Util.getExceptionMsg(e): " + Util.getExceptionMsg(e));
+			Util.getConsoleLogger().info("sendHttpPostRequest() Util.getExceptionMsg(e): " + Util.getExceptionMsg(e));
+			Util.getFileLogger().info("sendHttpPostRequest end");
+//			e.printStackTrace();
+			return responseSB.toString();
+		}		
+		
+		/** 建立連線 **/
+		HttpURLConnection connection;
+		try {
+			connection = (HttpURLConnection) url.openConnection();
+			connection.setDoOutput(true);
+			connection.setRequestMethod("POST");
+			connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=" + aCharset.name() + ";");
+			connection.setRequestProperty("Content-Length", String.valueOf(aPostDataList.size()));
+			connection.setConnectTimeout(20000); //set timeout to 20 seconds
+			// Write data
+			OutputStream os = connection.getOutputStream();
+			BufferedWriter writer = new BufferedWriter( new OutputStreamWriter(os, aCharset.name()));;
+			writer.write(com.util.Util.getQuery(aPostDataList));
+			writer.flush();
+			// 建立連線
+			connection.connect();
+			// Read response
+			BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), aCharset.name()));
+			String line;
+			while ((line = br.readLine()) != null)
+				responseSB.append(line);
+			// Close streams
+			writer.close();
+			os.close();
+			br.close();
+		} catch (java.net.SocketTimeoutException e) {
+			Util.getFileLogger().info("sendHttpPostRequest start input - SocketTimeoutException: " + Util.getExceptionMsg(e));
+			Util.getConsoleLogger().info("sendHttpPostRequest start input - SocketTimeoutException: " + Util.getExceptionMsg(e));
+//			e.printStackTrace();
+		} catch (IOException e) {
+			Util.getFileLogger().info("sendHttpPostRequest start input - IOException: " + Util.getExceptionMsg(e));
+			Util.getConsoleLogger().info("sendHttpPostRequest start input - IOException: " + Util.getExceptionMsg(e));
+//			e.printStackTrace();
+		} catch (Exception e) {
+			Util.getFileLogger().info("sendHttpPostRequest start input - Exception: " + Util.getExceptionMsg(e));
+			Util.getConsoleLogger().info("sendHttpPostRequest start input - Exception: " + Util.getExceptionMsg(e));
+//			e.printStackTrace();
+		}
+		
+//		Util.getFileLogger().info("sendHttpPostRequest start input - responseSB.toString(): " + responseSB.toString());
+//		Util.getFileLogger().info("sendHttpPostRequest end");
+		return responseSB.toString();
+		
+    }
+	
+	public static String getQuery(List<AbstractMap.SimpleEntry<String,String>> params) throws UnsupportedEncodingException
+	{
+	    StringBuilder result = new StringBuilder();
+	    boolean first = true;
+
+	    for (AbstractMap.SimpleEntry<String,String> pair : params)
+	    {
+	    	/** 若為空值,則不再繼續(防呆) **/
+	    	if (pair.getValue() == null || pair.getKey() == null)
+	    		continue;
+	    	
+	    	
+	        if (first)
+	            first = false;
+	        else
+	            result.append("&");
+
+	        result.append(URLEncoder.encode(pair.getKey(), "UTF-8"));
+	        result.append("=");
+	        result.append(URLEncoder.encode(pair.getValue(), "UTF-8"));
+	    }
+//	    Util.getFileLogger().info("getQuery() - result.toString(): " + result.toString());
+	    return result.toString();
+	}
+	
+    
+	public static String getExceptionMsg(Throwable e){
+		String eMsg = null;
+		try(StringWriter trace = new StringWriter();){
+			e.printStackTrace(new PrintWriter(trace));
+			eMsg = trace.toString();
+		}catch(Exception exception){
+			Util.getFileLogger().info("getExceptionMsg exception.getMessage(): " + exception.getMessage());
+		}
+	    return eMsg;
+	}
+	
 }
