@@ -71,8 +71,8 @@ public class BeanGenerator {
 	 * @return
 	 */
 	@Bean 
-	public com.bean.ApplicationListenerBean ApplicationListenerBean(){
-		return new com.bean.ApplicationListenerBean();
+	public com.filter.ApplicationListenerBean ApplicationListenerBean(){
+		return new com.filter.ApplicationListenerBean();
 	}
 
 	

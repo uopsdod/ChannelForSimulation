@@ -1,4 +1,4 @@
-package com.bean;
+package com.filter;
 
 
 import org.springframework.context.ApplicationEvent;
