@@ -18,6 +18,7 @@ public class TestUtil{
 	public static String userID = UUID.randomUUID().toString();
 	public static String callID = UUID.randomUUID().toString();
 	public static String tenantID = "3";
+	public static String QueueName = AmqpUtil.QUEUE_NAME.BACKEND_TO_VOICE_QUEUE;
 
 	private final AmqpTemplate template;
 	private ApplicationContext appContext;
