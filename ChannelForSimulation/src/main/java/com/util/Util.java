@@ -50,6 +50,8 @@ import org.springframework.stereotype.Component;
 
 import com.bean.VersionBean;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -82,12 +84,41 @@ public class Util {
 	public static void setSystemParam(Map<String, String> systemParam) {
 		Attr.SystemParam = systemParam;
 	}
-	
 	public static JsonObject getGJsonObject(String aMsg){
 		JsonParser jsonParser = new JsonParser(); 
-		JsonObject msgJson = jsonParser.parse(aMsg).getAsJsonObject();
+		JsonElement parse = jsonParser.parse(aMsg);
+		JsonObject msgJson = null;
+		if (parse.isJsonObject()){
+			msgJson = parse.getAsJsonObject();
+		}
 		return msgJson;
 	}
+	public static JsonArray getGJsonArray(String aMsg){
+		JsonParser jsonParser = new JsonParser(); 
+		JsonElement parse = jsonParser.parse(aMsg);
+		JsonArray msgJson = null;
+		if (parse.isJsonArray()){
+			msgJson = parse.getAsJsonArray();
+		}
+		return msgJson;
+	}
+	
+	public static JsonArray getGJsonArray(JsonObject aObj, String aKey){
+		Util.getFileLogger().info("getGJsonArray getGJsonArray");
+		Util.getFileLogger().info("getGJsonArray input aObj: " + aObj);
+		Util.getFileLogger().info("getGJsonArray input aKey: " + aKey);
+		JsonElement jsonElmt = aObj.get(aKey);
+		Util.getFileLogger().info("getGJsonArray jsonElmt: " + jsonElmt);
+		if (jsonElmt == null){
+			return null;
+		}else if (jsonElmt.isJsonArray()){
+			return jsonElmt.getAsJsonArray();
+		}else{
+			Util.getFileLogger().info("getGJsonArray(JsonObject aObj, String aKey) is not a JsonArray");
+		}
+		return null;
+	}	
+	
 	public static String getGString(JsonObject aObj, String aKey){
 		return (aObj.get(aKey) != null && !(aObj.get(aKey)instanceof JsonNull))?aObj.get(aKey).getAsString():null;
 	}

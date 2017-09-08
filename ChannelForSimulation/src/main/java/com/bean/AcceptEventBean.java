@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
  
 public class AcceptEventBean {
 	
-	private String type;
+	private String type = "acceptevent";
 	private String userID;
 	private String roomID;
 	private JsonArray memberListToJoin;

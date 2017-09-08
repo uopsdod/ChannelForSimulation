@@ -15,10 +15,40 @@ import com.util.Util;
 
 @Component
 public class TestUtil{
-	public static String userID = UUID.randomUUID().toString();
-	public static String callID = UUID.randomUUID().toString();
+	public static final String TAG = "TestUtil";
+
+	public static String userID_client = UUID.randomUUID().toString();
+	public static String callID_client = UUID.randomUUID().toString();
+	public static String userName_client = "User_" + UUID.randomUUID().toString().substring(0,3);
+	
+//	public static String userID_agent = UUID.randomUUID().toString();
+	public static String userID_agent = "101";
+	public static String callID_agent = "101";
+	public static String dialNO_agent = "19191";
+	public static String userName_agent = "User_" + UUID.randomUUID().toString().substring(0,3);
+	
+	
 	public static String tenantID = "3";
+	public static String typeID = "2";
+	public static String userdata = null;
+	public static String entityTypeID = EntityTypeEnum.VOICE.getEntityTypeID();
 	public static String QueueName = AmqpUtil.QUEUE_NAME.BACKEND_TO_VOICE_QUEUE;
+	
+	static{
+		Util.getConsoleLogger().info(TestUtil.TAG + " userID_client: " + userID_client);
+		Util.getConsoleLogger().info(TestUtil.TAG + " callID_client: " + callID_client);
+		Util.getConsoleLogger().info(TestUtil.TAG + " userName_client: " + userName_client);
+
+		Util.getConsoleLogger().info(TestUtil.TAG + " userID_agent: " + userID_agent);
+		Util.getConsoleLogger().info(TestUtil.TAG + " callID_agent: " + callID_agent);
+		Util.getConsoleLogger().info(TestUtil.TAG + " dialNO_agent: " + dialNO_agent);
+		Util.getConsoleLogger().info(TestUtil.TAG + " userName_agent: " + userName_agent);
+		
+		Util.getConsoleLogger().info(TestUtil.TAG + " tenantID: " + tenantID);
+		Util.getConsoleLogger().info(TestUtil.TAG + " entityTypeID: " + entityTypeID);
+		Util.getConsoleLogger().info(TestUtil.TAG + " QueueName: " + QueueName);
+		
+	}
 
 	private final AmqpTemplate template;
 	private ApplicationContext appContext;

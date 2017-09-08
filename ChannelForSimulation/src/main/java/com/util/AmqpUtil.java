@@ -38,7 +38,7 @@ public class AmqpUtil {
 //		public static final String CHANNEL_TO_BACKEND_QUEUE02 = "CHANNEL_TO_BACKEND_QUEUE02";
 		
 		// Consumers - channel
-//		public static final String BACKEND_TO_WEBCHAT_QUEUE = "BACKEND_TO_WEBCHAT_QUEUE";
+		public static final String BACKEND_TO_WEBCHAT_QUEUE = "BACKEND_TO_WEBCHAT_QUEUE";
 //		public static final String BACKEND_TO_LINE_QUEUE = "BACKEND_TO_LINE_QUEUE";
 //		public static final String BACKEND_TO_WECHAT_QUEUE = "BACKEND_TO_WECHAT_QUEUE";
 		public static final String BACKEND_TO_VOICE_QUEUE = "BACKEND_TO_VOICE_QUEUE";	

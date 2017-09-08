@@ -27,4 +27,10 @@ public class BasicController {
 		return "welcome";
 	}
 
+	@RequestMapping("simulation")
+	public String simulation(Map<String, String> model) {
+		model.put("message", "hello");
+		return "simulation";
+	}	
+	
 }

@@ -5,12 +5,22 @@ public class UpdateStatusBean {
 		
 	}
 	private String type = "updateStatus";
+	private String userID;
+	private String entityTypeID; // 考慮是否以後每個都要加
 	private String status;
 	private String dbid;
 	private String startORend;
 	private String roomID;
 	private String clientID;
 	private String reason_dbid;
+	private String Event;
+	
+	public String getEvent() {
+		return Event;
+	}
+	public void setEvent(String event) {
+		Event = event;
+	}
 	public String getType() {
 		return type;
 	}
@@ -53,8 +63,18 @@ public class UpdateStatusBean {
 	public void setReason_dbid(String reason_dbid) {
 		this.reason_dbid = reason_dbid;
 	}
-	
-	
+	public String getUserID() {
+		return userID;
+	}
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+	public String getEntityTypeID() {
+		return entityTypeID;
+	}
+	public void setEntityTypeID(String entityTypeID) {
+		this.entityTypeID = entityTypeID;
+	}
 	
 	
 }

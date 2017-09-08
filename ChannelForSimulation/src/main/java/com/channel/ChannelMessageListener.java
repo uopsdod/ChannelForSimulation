@@ -66,11 +66,10 @@ public class ChannelMessageListener implements MessageListener{
 				"OUT to endpoint - (" + Event + ")aMsg: " + aMsg);
 
 		// 5. 向下皆入channel API
-
-		ClassLoader cl = this.getClass().getClassLoader();
-		String path = cl.getResource("/").getPath();
+//		ClassLoader cl = this.getClass().getClassLoader();
+//		String path = cl.getResource("/").getPath();
 		// String path = "src/";
-		Util.getFileLogger().info("path: " + path);
+//		Util.getFileLogger().info("path: " + path);
 		
 		if (Event != null){
 			Event = Event.trim().toLowerCase();
