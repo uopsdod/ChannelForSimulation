@@ -41,7 +41,7 @@ public class ClientLoginRunnable implements Runnable{
 		/** 建立URL字串 **/
 		String hostURL = Util.getHostURLStr("RESTful");
 		String projectName = Util.getProjectStr("RESTful");
-		String urlStr = hostURL + projectName + "/RESTful/searchUserdataNew";
+		String urlStr = hostURL + "/" + projectName + "/RESTful/searchUserdataNew";
 		Util.getConsoleLogger().info("searchUserdataNew urlStr: " + urlStr);
 		Util.getFileLogger().info("searchUserdataNew urlStr: " + urlStr);
 ////			String urlStr = TestUtil.url_8080 + "/getEntityTypeAsList";
@@ -87,7 +87,7 @@ public class ClientLoginRunnable implements Runnable{
 		// loginBean.setClientPilotID("");// 注意: pilotID
 		
 		String loginBeanJSON = Util.getGson().toJson(loginBean,LoginBean.class);
-//		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, loginBeanJSON);
-		AmqpUtil.getAmqpTemplate().convertSendAndReceive(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, loginBeanJSON);
+		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, loginBeanJSON);
+//		AmqpUtil.getAmqpTemplate().convertSendAndReceive(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, loginBeanJSON);
 	}
 }

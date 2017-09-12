@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -17,6 +18,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.EnableMBeanExport;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -31,7 +33,9 @@ import com.rabbitmq.client.Envelope;
 import com.rabbitmq.client.AMQP;
 
 @Configuration
+@EnableRabbit
 @EnableMBeanExport(defaultDomain="${projectName}")
+@PropertySource("classpath:application.properties")
 public class rabbitmqBeanGenerator {
 	
 //	@Value("${rabbitmqhostname}")
@@ -44,6 +48,12 @@ public class rabbitmqBeanGenerator {
 
 	@Value("${rabbitmq-password}")
 	public String rabbitmqPassword;
+	
+	@Bean
+	public RabbitListenerRegister rabbitListenerRegister(CachingConnectionFactory aCachingConnectionFactory){
+		RabbitListenerRegister rabbitListenerRegister = new RabbitListenerRegister();
+		return rabbitListenerRegister;
+	}
 	
 	// 設定server IP, username, password
 	@Bean

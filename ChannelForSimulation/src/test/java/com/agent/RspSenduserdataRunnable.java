@@ -41,9 +41,11 @@ public class RspSenduserdataRunnable implements Runnable{
 		senduserdataRsp.addProperty("Event", "senduserdata");
 		senduserdataRsp.addProperty("clientName", TestUtil.userName_client);
 		senduserdataRsp.addProperty("clientID", TestUtil.userID_client);
-		senduserdataRsp.addProperty("userdata", TestUtil.userdata);
+		senduserdataRsp.add("userdata", Util.getGJsonObject(TestUtil.userdata));
 		
-		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.BACKEND_TO_WEBCHAT_QUEUE, Util.getGson().toJson(senduserdataRsp));
+		String json = Util.getGson().toJson(senduserdataRsp);
+		System.out.println("json:" + json);
+		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.BACKEND_TO_WEBCHAT_QUEUE, json);
 	}
 	
 	class RoomMember {

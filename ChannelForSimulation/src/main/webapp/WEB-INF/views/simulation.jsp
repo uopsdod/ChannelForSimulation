@@ -55,7 +55,14 @@
 
 <!-- JS -->
 <script>
-	var url_g = "http://localhost:9009/triggerAction";
+	var url_g;
+	console.log("server_hostname: " + "${server_hostname}");
+	if ('${server_hostname}' != 'localhost'){
+		url_g = "http://${server_hostname}:${server_port}/${server_project}/triggerAction";
+	}else{
+		url_g = "http://${server_hostname}:${server_port}/triggerAction";
+	}
+	console.log("url_g: " + url_g);
 </script>
 
 <!-- Vue -->

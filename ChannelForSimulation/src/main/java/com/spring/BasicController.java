@@ -30,6 +30,10 @@ public class BasicController {
 	@RequestMapping("simulation")
 	public String simulation(Map<String, String> model) {
 		model.put("message", "hello");
+		System.out.println("BasicController simulation server_hostname: " + Util.getSystemParam().get("server_hostname"));
+		model.put("server_hostname", Util.getSystemParam().get("server_hostname"));
+		model.put("server_port", Util.getSystemParam().get("server_port"));
+		model.put("server_project", Util.getSystemParam().get("server_project"));
 		return "simulation";
 	}	
 	

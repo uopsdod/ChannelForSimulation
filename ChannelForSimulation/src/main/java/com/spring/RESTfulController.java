@@ -6,6 +6,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,8 @@ import com.client.ClientLoginRunnable;
 import com.util.Util;
 
 @RestController
+@CrossOrigin
+//@CrossOrigin(origins = "http://domain2.com", maxAge = 3600)
 public class RESTfulController {
 	public static final String TAG = "RESTfulController";
 	

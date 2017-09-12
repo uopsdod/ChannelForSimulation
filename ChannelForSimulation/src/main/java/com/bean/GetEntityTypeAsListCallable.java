@@ -46,7 +46,7 @@ public class GetEntityTypeAsListCallable implements Callable{
 		/** 建立URL字串 **/
 		String hostURL = Util.getHostURLStr("RESTful");
 		String projectName = Util.getProjectStr("RESTful");
-		String urlStr = hostURL + projectName + "/RESTful/getEntityTypeAsList";
+		String urlStr = hostURL + "/" + projectName + "/RESTful/getEntityTypeAsList";
 		Util.getConsoleLogger().info("getEntityTypeAsList urlStr: " + urlStr);
 		Util.getFileLogger().info("getEntityTypeAsList urlStr: " + urlStr);
 ////		String urlStr = TestUtil.url_8080 + "/getEntityTypeAsList";

@@ -20,8 +20,6 @@ import com.util.AmqpUtil;
 import com.util.ChannelUtil;
 import com.util.Util;
 
-@Configuration
-@EnableRabbit
 public class RabbitListenerRegister implements RabbitListenerConfigurer {
 	
     @Override
@@ -36,6 +34,7 @@ public class RabbitListenerRegister implements RabbitListenerConfigurer {
         endpoint.setId(UUID.randomUUID().toString());
         endpoint.setMessageListener(new ChannelMessageListener());
         registrar.registerEndpoint(endpoint);
+        
         Util.getConsoleLogger().info("IN configureRabbitListeners ends");
         Util.getFileLogger().info("IN configureRabbitListeners ends");
     }
