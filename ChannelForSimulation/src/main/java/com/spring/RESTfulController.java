@@ -17,6 +17,7 @@ import com.agent.UpdateStatusNotReadyRunnable;
 import com.agent.UpdateStatusReadyRunnable;
 import com.client.ClientExitRunnable;
 import com.client.ClientLoginRunnable;
+import com.util.TestUtil;
 import com.util.Util;
 
 @RestController
@@ -29,9 +30,27 @@ public class RESTfulController {
 	private ScheduledExecutorService scheduledExecutorService;
 	
     @PostMapping("/triggerAction")
-    public void triggerAction(@RequestParam(value="actionName", required=true) String actionName) {
+    public void triggerAction(@RequestParam(value="actionName", required=true) String actionName
+    							,@RequestParam(value="userID_agent") String userID_agent
+    							,@RequestParam(value="dialNO_agent") String dialNO_agent
+    							,@RequestParam(value="userName_agent") String userName_agent
+    							,@RequestParam(value="userID_client") String userID_client
+    							,@RequestParam(value="callID_client") String callID_client
+    							,@RequestParam(value="userName_client") String userName_client
+    							) {
     	Util.getConsoleLogger().info(TAG + "/triggerAction starts");
     	Util.getConsoleLogger().info(TAG + "/triggerAction input actionName: " + actionName);
+    	Util.getConsoleLogger().info(TAG + "/triggerAction input userID_agent: " + userID_agent);
+    	Util.getConsoleLogger().info(TAG + "/triggerAction input dialNO_agent: " + dialNO_agent);
+    	Util.getConsoleLogger().info(TAG + "/triggerAction input userName_agent: " + userName_agent);
+    	Util.getConsoleLogger().info(TAG + "/triggerAction input userID_client: " + userID_client);
+    	Util.getConsoleLogger().info(TAG + "/triggerAction input callID_client: " + callID_client);
+    	Util.getConsoleLogger().info(TAG + "/triggerAction input userName_client: " + userName_client);
+    	
+    	/** 更新使用者參數 **/
+    	TestUtil.userID_agent = userID_agent;
+    	TestUtil.dialNO_agent = dialNO_agent;
+    	TestUtil.userName_agent = userName_agent;
     	
     	/** 全部轉為小寫 **/
     	actionName = actionName.toLowerCase();

@@ -34,19 +34,36 @@
 	<div id="root">
 		<h1>Simulation board</h1>
 		<h3>Agent: </h3>
-		<action action_name="updatestatus_ready"></action>
+		<!-- 顯示資訊 -->
+		Agent ID: <input type="text" v-model="userID_agent">
 		<div class="spacer10"></div>
-		<action action_name="updatestatus_notready"></action>
+		Agent DialNo: <input type="text" v-model="dialNO_agent">
 		<div class="spacer10"></div>
-		<action action_name="accept_event"></action>
+		Agent Name: <input type="text" v-model="userName_agent">
+		<div class="spacer10"></div>
+		<!-- 請求動作 -->
+		<action action_name="updatestatus_ready" v-bind:my_parent="rootObj"></action>
+		<div class="spacer10"></div>
+		<action action_name="updatestatus_notready" v-bind:my_parent="rootObj"></action>
+		<div class="spacer10"></div>
+		<action action_name="accept_event" v-bind:my_parent="rootObj"></action>
 		<div class="spacer10"></div>
 		<hr>
 		<h3>Client: </h3>
-		<action action_name="rsp_senduserdata"></action>
+		
+		<!-- 顯示資訊 -->
+		Client ID: <input type="text" v-model="userID_client">
 		<div class="spacer10"></div>
-		<action action_name="client_login"></action>
+		Client callID: <input type="text" v-model="callID_client">
 		<div class="spacer10"></div>
-		<action action_name="client_exit"></action>
+		Client Name: <input type="text" v-model="userName_client">
+		<div class="spacer10"></div>
+		<!-- 請求動作 -->		
+		<action action_name="rsp_senduserdata" v-bind:my_parent="rootObj"></action>
+		<div class="spacer10"></div>
+		<action action_name="client_login" v-bind:my_parent="rootObj"></action>
+		<div class="spacer10"></div>
+		<action action_name="client_exit" v-bind:my_parent="rootObj"></action>
 		<div class="spacer10"></div>
 		
 	</div> <!-- end of "root" div -->
@@ -71,12 +88,26 @@
 		template:
 			'<button @click="sendReq">{{ this.action_name }}</button>',
 		props: {
-			action_name : { required: true }
+			action_name : { required: true },
+			my_parent: {}
+			
+		},
+		mounted:function(){
+			console.log("this.my_parent.userID_agent: " + this.my_parent.userID_agent); // debug
 		},
 		methods: {
 			sendReq: function(){
+				
 				var url = url_g;
-				var querryData = {actionName : this.action_name};
+				var querryData = {
+									actionName : this.action_name
+									,userID_agent : this.my_parent.userID_agent	
+									,dialNO_agent : this.my_parent.dialNO_agent	
+									,userName_agent : this.my_parent.userName_agent	
+									,userID_client : this.my_parent.userID_client	
+									,callID_client : this.my_parent.callID_client	
+									,userName_client : this.my_parent.userName_client	
+								};
 // 				var promise = $.post(url, querryData, function() {}, "json");
 				var promise = $.post(url, querryData);
         	}
@@ -87,6 +118,13 @@
         el: '#root',
         data: function(){
         	return {
+        		userID_agent : '${userID_agent}',
+        		dialNO_agent : '${dialNO_agent}',
+        		userName_agent : '${userName_agent}',
+        		userID_client : '${userID_client}',
+        		callID_client : '${callID_client}',
+        		userName_client : '${userName_client}',
+        		rootObj:this
 //         		isCouponVerified : false,
 //         		coupon_code : ''
         	}
