@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.agent.AcceptEventRunnable;
+import com.agent.LeaveRoomRunnable;
 import com.agent.RspSenduserdataRunnable;
 import com.agent.UpdateStatusNotReadyRunnable;
 import com.agent.UpdateStatusReadyRunnable;
@@ -31,6 +32,8 @@ public class RESTfulController {
 	
     @PostMapping("/triggerAction")
     public void triggerAction(@RequestParam(value="actionName", required=true) String actionName
+					    		,@RequestParam(value="tenantID") String tenantID
+					    		,@RequestParam(value="typeID") String typeID
     							,@RequestParam(value="userID_agent") String userID_agent
     							,@RequestParam(value="dialNO_agent") String dialNO_agent
     							,@RequestParam(value="userName_agent") String userName_agent
@@ -39,6 +42,8 @@ public class RESTfulController {
     							,@RequestParam(value="userName_client") String userName_client
     							) {
     	Util.getConsoleLogger().info(TAG + "/triggerAction starts");
+    	Util.getConsoleLogger().info(TAG + "/triggerAction input tenantID: " + tenantID);
+    	Util.getConsoleLogger().info(TAG + "/triggerAction input typeID: " + typeID);
     	Util.getConsoleLogger().info(TAG + "/triggerAction input actionName: " + actionName);
     	Util.getConsoleLogger().info(TAG + "/triggerAction input userID_agent: " + userID_agent);
     	Util.getConsoleLogger().info(TAG + "/triggerAction input dialNO_agent: " + dialNO_agent);
@@ -51,6 +56,8 @@ public class RESTfulController {
     	TestUtil.userID_agent = userID_agent;
     	TestUtil.dialNO_agent = dialNO_agent;
     	TestUtil.userName_agent = userName_agent;
+    	TestUtil.tenantID = tenantID;
+    	TestUtil.typeID = typeID;
     	
     	/** 全部轉為小寫 **/
     	actionName = actionName.toLowerCase();
@@ -73,6 +80,9 @@ public class RESTfulController {
     		break;
     	case "rsp_senduserdata":
     		scheduledExecutorService.submit(new RspSenduserdataRunnable());
+    		break;
+    	case "agent_leaveroom":
+    		scheduledExecutorService.submit(new LeaveRoomRunnable());
     		break;
 		}
     	

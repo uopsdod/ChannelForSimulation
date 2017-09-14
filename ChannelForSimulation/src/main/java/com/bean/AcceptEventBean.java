@@ -9,6 +9,13 @@ public class AcceptEventBean {
 	private String roomID;
 	private JsonArray memberListToJoin;
 	private String channel;
+	private String entityTypeID;
+	public String getEntityTypeID() {
+		return entityTypeID;
+	}
+	public void setEntityTypeID(String entityTypeID) {
+		this.entityTypeID = entityTypeID;
+	}
 	public String getType() {
 		return type;
 	}

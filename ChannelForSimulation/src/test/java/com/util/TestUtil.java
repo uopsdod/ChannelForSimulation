@@ -33,11 +33,12 @@ public class TestUtil{
 	
 	public static String userName_agent = "User_" + UUID.randomUUID().toString().substring(0,3);
 	
+	public static String roomID = UUID.randomUUID().toString();
 	
 	public static String tenantID = "3";
 	public static String typeID = "2";
 	public static String userdata = null;
-	public static String entityTypeID = EntityTypeEnum.VOICE.getEntityTypeID();
+	public static String entityTypeID; // ApplicationListenerBean的時候更新
 	public static String QueueName = AmqpUtil.QUEUE_NAME.BACKEND_TO_VOICE_QUEUE;
 	
 	static{

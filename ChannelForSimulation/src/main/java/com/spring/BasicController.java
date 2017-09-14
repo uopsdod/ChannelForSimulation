@@ -36,6 +36,9 @@ public class BasicController {
 		model.put("server_hostname", Util.getSystemParam().get("server_hostname"));
 		model.put("server_port", Util.getSystemParam().get("server_port"));
 		model.put("server_project", Util.getSystemParam().get("server_project"));
+		// general
+		model.put("tenantID", TestUtil.tenantID);
+		model.put("typeID", TestUtil.typeID);
 		// agent
 		model.put("userID_agent", TestUtil.userID_agent);
 		model.put("dialNO_agent", TestUtil.dialNO_agent);

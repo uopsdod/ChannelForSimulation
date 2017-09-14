@@ -35,21 +35,21 @@ public class RspSenduserdataRunnable implements Runnable{
 
 	@Override
 	public void run() {
-		
-		
-
 		JsonObject senduserdataRsp = new JsonObject();
-		senduserdataRsp.addProperty("userID", TestUtil.userID_agent);
+		senduserdataRsp.addProperty("userID", TestUtil.dialNO_agent);
+		senduserdataRsp.addProperty("type", "senduserdata"); // 新增
 		senduserdataRsp.addProperty("Event", "senduserdata");
 		senduserdataRsp.addProperty("clientName", TestUtil.userName_client);
 		senduserdataRsp.addProperty("clientID", TestUtil.userID_client);
 //		senduserdataRsp.addProperty("clientPilotID", "");
 		senduserdataRsp.addProperty("clientEntityTypeID", EntityTypeEnum.VOICE.getEntityTypeID());
+		senduserdataRsp.addProperty("entityTypeID", EntityTypeEnum.VOICE.getEntityTypeID());
 		senduserdataRsp.add("userdata", Util.getGJsonObject(TestUtil.userdata));
 		
 		String json = Util.getGson().toJson(senduserdataRsp);
 		System.out.println("json:" + json);
-		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.BACKEND_TO_WEBCHAT_QUEUE, json);
+//		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.BACKEND_TO_WEBCHAT_QUEUE, json);
+		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, json);
 	}
 	
 	class RoomMember {

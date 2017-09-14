@@ -27,13 +27,14 @@ public class RabbitListenerRegister implements RabbitListenerConfigurer {
     	Util.getConsoleLogger().debug("configureRabbitListeners() starts");
     	Util.getConsoleLogger().debug("configureRabbitListeners() registrar: "+ registrar);
     	
-        SimpleRabbitListenerEndpoint endpoint = new SimpleRabbitListenerEndpoint();
-//        endpoint.setQueueNames("anotherQueue");
-//        endpoint.setQueueNames(AmqpUtil.QUEUE_NAME.BACKEND_TO_VOICE_QUEUE);
-        endpoint.setQueueNames(Util.getSystemParam().get("queueName")); // 此區塊與util塞值區塊的生命週期須再確認
-        endpoint.setId(UUID.randomUUID().toString());
-        endpoint.setMessageListener(new ChannelMessageListener());
-        registrar.registerEndpoint(endpoint);
+    	// 註冊voice listener
+//        SimpleRabbitListenerEndpoint endpoint = new SimpleRabbitListenerEndpoint();
+////        endpoint.setQueueNames("anotherQueue");
+////        endpoint.setQueueNames(AmqpUtil.QUEUE_NAME.BACKEND_TO_VOICE_QUEUE);
+//        endpoint.setQueueNames(Util.getSystemParam().get("queueName")); // 此區塊與util塞值區塊的生命週期須再確認
+//        endpoint.setId(UUID.randomUUID().toString());
+//        endpoint.setMessageListener(new ChannelMessageListener());
+//        registrar.registerEndpoint(endpoint);
         
         Util.getConsoleLogger().info("IN configureRabbitListeners ends");
         Util.getFileLogger().info("IN configureRabbitListeners ends");

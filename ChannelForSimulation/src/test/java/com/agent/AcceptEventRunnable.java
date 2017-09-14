@@ -46,7 +46,7 @@ public class AcceptEventRunnable implements Runnable{
 		
 		/** 蒐集房間成員list **/
 		List<RoomMember> memberListToJoin = new ArrayList<>();
-		RoomMember agentMem = new RoomMember(TestUtil.userID_agent);
+		RoomMember agentMem = new RoomMember(TestUtil.dialNO_agent);
 		memberListToJoin.add(agentMem);
 		RoomMember clientMem = new RoomMember(TestUtil.userID_client);
 		memberListToJoin.add(clientMem);
@@ -58,8 +58,8 @@ public class AcceptEventRunnable implements Runnable{
 		Util.getConsoleLogger().info("memberListToJoinJsonAry: " + memberListToJoinJsonAry);
 		
 		AcceptEventBean acceptEventBean = new AcceptEventBean();
-		acceptEventBean.setUserID(TestUtil.userID_agent);
-		acceptEventBean.setRoomID("none");
+		acceptEventBean.setUserID(TestUtil.dialNO_agent);
+		acceptEventBean.setRoomID(TestUtil.roomID);
 		acceptEventBean.setMemberListToJoin(memberListToJoinJsonAry);
 		acceptEventBean.setChannel(TestUtil.entityTypeID);
 		

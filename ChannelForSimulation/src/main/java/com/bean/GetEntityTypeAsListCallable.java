@@ -11,6 +11,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.util.EntityTypeEnum;
+import com.util.TestUtil;
 import com.util.Util;
 
 public class GetEntityTypeAsListCallable implements Callable{
@@ -35,6 +36,10 @@ public class GetEntityTypeAsListCallable implements Callable{
 				EntityTypeEnum.updateEntityTypeEnum(entityTypeName, entityTypeID, entityDescription);
 			}
 		}
+		
+		// 更新
+		TestUtil.entityTypeID = EntityTypeEnum.VOICE.getEntityTypeID();
+		
 		return null;
 	}
 	

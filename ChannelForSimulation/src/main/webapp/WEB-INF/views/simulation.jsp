@@ -33,6 +33,12 @@
 <body>
 	<div id="root">
 		<h1>Simulation board</h1>
+		
+		<h3>General: </h3>
+		tenantID: <input type="text" v-model="tenantID">
+		<div class="spacer10"></div>
+		typeID: <input type="text" v-model="typeID">
+		<div class="spacer10"></div>
 		<h3>Agent: </h3>
 		<!-- 顯示資訊 -->
 		Agent ID: <input type="text" v-model="userID_agent">
@@ -47,6 +53,8 @@
 		<action action_name="updatestatus_notready" v-bind:my_parent="rootObj"></action>
 		<div class="spacer10"></div>
 		<action action_name="accept_event" v-bind:my_parent="rootObj"></action>
+		<div class="spacer10"></div>
+		<action action_name="agent_leaveroom" v-bind:my_parent="rootObj"></action>
 		<div class="spacer10"></div>
 		<hr>
 		<h3>Client: </h3>
@@ -101,6 +109,8 @@
 				var url = url_g;
 				var querryData = {
 									actionName : this.action_name
+									,tenantID : this.my_parent.tenantID	
+									,typeID : this.my_parent.typeID	
 									,userID_agent : this.my_parent.userID_agent	
 									,dialNO_agent : this.my_parent.dialNO_agent	
 									,userName_agent : this.my_parent.userName_agent	
@@ -118,6 +128,8 @@
         el: '#root',
         data: function(){
         	return {
+        		tenantID : '${tenantID}',
+        		typeID : '${typeID}',
         		userID_agent : '${userID_agent}',
         		dialNO_agent : '${dialNO_agent}',
         		userName_agent : '${userName_agent}',
