@@ -20,18 +20,17 @@ public class TestUtil{
 	public static String userID_client = UUID.randomUUID().toString();
 	public static String callID_client = UUID.randomUUID().toString();
 	public static String userName_client = "User_" + UUID.randomUUID().toString().substring(0,3);
+	public static String pilotID_client = "1";
 	
 //	public static String userID_agent = UUID.randomUUID().toString();
 
 	public static String userID_agent = "101";
-//	public static String userID_agent = "103";
-	
-//	public static String callID_agent = "101";
-	
 	public static String dialNO_agent = "19191";
-//	public static String dialNO_agent = "305";
-	
 	public static String userName_agent = "User_" + UUID.randomUUID().toString().substring(0,3);
+	
+	public static String userID_agent02 = "102";
+	public static String dialNO_agent02 = "18181";
+	public static String userName_agent02 = "User_" + UUID.randomUUID().toString().substring(0,3);
 	
 	public static String roomID = UUID.randomUUID().toString();
 	

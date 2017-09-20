@@ -58,6 +58,10 @@
 		<div class="spacer10"></div>
 		<action action_name="agent_rejectevent" v-bind:my_parent="rootObj"></action>
 		<div class="spacer10"></div>
+		<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj"></action>
+		<div class="spacer10"></div>
+		<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj"></action>
+		<div class="spacer10"></div>
 		<hr>
 		<h3>Client: </h3>
 		
