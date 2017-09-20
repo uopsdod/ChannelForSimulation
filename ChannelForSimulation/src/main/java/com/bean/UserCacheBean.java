@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserCacheBean {
-	private static Map<String,UserInfoForSimulation> userInfo = Collections.synchronizedMap(new HashMap<>());
+	private static Map<String,UserInfoForSimulation> userInfo = Collections.synchronizedMap(new HashMap<String,UserInfoForSimulation>());
 
 	public static Map<String, UserInfoForSimulation> getUserInfo() {
 		return userInfo;

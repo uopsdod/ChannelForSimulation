@@ -56,6 +56,8 @@
 		<div class="spacer10"></div>
 		<action action_name="agent_leaveroom" v-bind:my_parent="rootObj"></action>
 		<div class="spacer10"></div>
+		<action action_name="agent_rejectevent" v-bind:my_parent="rootObj"></action>
+		<div class="spacer10"></div>
 		<hr>
 		<h3>Client: </h3>
 		

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.agent.AcceptEventRunnable;
 import com.agent.LeaveRoomRunnable;
+import com.agent.RejectEventRunnable;
 import com.agent.RspSenduserdataRunnable;
 import com.agent.UpdateStatusNotReadyRunnable;
 import com.agent.UpdateStatusReadyRunnable;
@@ -83,6 +84,9 @@ public class RESTfulController {
     		break;
     	case "agent_leaveroom":
     		scheduledExecutorService.submit(new LeaveRoomRunnable());
+    		break;
+    	case "agent_rejectevent":
+    		scheduledExecutorService.submit(new RejectEventRunnable());
     		break;
 		}
     	

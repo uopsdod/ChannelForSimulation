@@ -62,6 +62,7 @@ public class AcceptEventRunnable implements Runnable{
 		acceptEventBean.setRoomID(TestUtil.roomID);
 		acceptEventBean.setMemberListToJoin(memberListToJoinJsonAry);
 		acceptEventBean.setChannel(TestUtil.entityTypeID);
+		acceptEventBean.setEntityTypeID(TestUtil.entityTypeID);
 		
 		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, Util.getGson().toJson(acceptEventBean));
 		

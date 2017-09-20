@@ -84,7 +84,7 @@ public class ClientLoginRunnable implements Runnable{
 		loginBean.setCallID(TestUtil.callID_client);
 		loginBean.setTenantID(TestUtil.tenantID);
 		loginBean.setEntityTypeID(EntityTypeEnum.VOICE.getEntityTypeID());
-		// loginBean.setClientPilotID("");// 注意: pilotID
+		loginBean.setClientPilotID("1");// 注意: pilotID
 		
 		String loginBeanJSON = Util.getGson().toJson(loginBean,LoginBean.class);
 		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, loginBeanJSON);
