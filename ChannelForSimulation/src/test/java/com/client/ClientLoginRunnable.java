@@ -35,7 +35,7 @@ public class ClientLoginRunnable implements Runnable{
 //		url : RESTful_protocol+"//"+RESTful_hostname+":"+RESTful_port+"/"+RESTful_project+"/RESTful/searchUserdataNew",		
 		/** 建立資料 **/
 		List<AbstractMap.SimpleEntry<String, String>> params = new ArrayList<>();
-		params.add(new AbstractMap.SimpleEntry<String, String>("searchVal", TestUtil.userName_client));
+		params.add(new AbstractMap.SimpleEntry<String, String>("searchVal", TestUtil.userID_client));
 		params.add(new AbstractMap.SimpleEntry<String, String>("typeID", TestUtil.typeID));
 		params.add(new AbstractMap.SimpleEntry<String, String>("tenantID", TestUtil.tenantID));
 		/** 建立URL字串 **/
