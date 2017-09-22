@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
 <html lang="en">
@@ -20,7 +22,33 @@
 .spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
 </style>
 
+<!-- bootstrap custom css -->
+<style type="text/css">
+.center {
+	margin: auto;
+	text-align: center;
+}
+
+.left {
+	margin: auto;
+	text-align: left;
+}
+
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.nopadding-horizontal{
+    padding-right: 0 !important;
+    padding-left: 0 !important;	
+}
+
+</style>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -36,6 +64,8 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css" rel="stylesheet">
+
 <script src="https://unpkg.com/vue"></script>
 
 <script
@@ -44,59 +74,122 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-	<div id="root">
-		<h1>Simulation board</h1>
+	<div class="form-group col-sm-12">
+		<div id="root">
+			<div class="form-group col-sm-12 box center">
+				<h1 class="title">語音進線模擬</h1>
+			</div>
+			
+			<div class="form-group col-sm-12 box">
+				<h4 class="title is-4">公司資訊</h4>
+				<div class="form-group col-sm-12 nopadding-horizontal">
+					<label for="tenantID" class="col-sm-1">	公司編號: </label>
+					<div class="col-sm-4">
+						<input type="text" class="input" id="tenantID" v-model="tenantID">
+					</div>
+				</div>
 		
-		<h3>General: </h3>
-		tenantID: <input type="text" v-model="tenantID">
-		<div class="spacer10"></div>
-		typeID: <input type="text" v-model="typeID">
-		<div class="spacer10"></div>
-		<h3>Agent: </h3>
-		<!-- 顯示資訊 -->
-		Agent ID: <input type="text" v-model="userID_agent">
-		<div class="spacer10"></div>
-		Agent DialNo: <input type="text" v-model="dialNO_agent">
-		<div class="spacer10"></div>
-		Agent Name: <input type="text" v-model="userName_agent">
-		<div class="spacer10"></div>
-		
-		<button type="button" class="btn info360-btn-default" data-dismiss="modal"><i class="comfirmicon"></i>test</button>
-		<div class="spacer10"></div>
-		<!-- 請求動作 -->
-		<action action_name="updatestatus_ready" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<action action_name="updatestatus_notready" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<action action_name="accept_event" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<action action_name="agent_leaveroom" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<action action_name="agent_rejectevent" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<hr>
-		<h3>Client: </h3>
-		
-		<!-- 顯示資訊 -->
-		Client ID: <input type="text" v-model="userID_client">
-		<div class="spacer10"></div>
-		Client callID: <input type="text" v-model="callID_client">
-		<div class="spacer10"></div>
-		Client Name: <input type="text" v-model="userName_client">
-		<div class="spacer10"></div>
-		<!-- 請求動作 -->		
-		<action action_name="rsp_senduserdata" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<action action_name="client_login" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		<action action_name="client_exit" v-bind:my_parent="rootObj"></action>
-		<div class="spacer10"></div>
-		
-	</div> <!-- end of "root" div -->
+				<div class="form-group col-sm-12 nopadding-horizontal">
+					<label for="typeID" class="col-sm-1"> 資料表編號: </label>
+					<div class="col-sm-4">
+						<input type="text" class="input" id="typeID" v-model="typeID">
+					</div>
+				</div>
+			</div>
+			
+			<hr/>
+			
+			<div class="form-group col-sm-12 box">
+				<h4 class="title is-4">客服人員</h4>
+				<div class="form-group col-sm-6 nopadding">
+					<div class="form-group col-sm-12 nopadding-horizontal">
+						<label for="typeID" class="col-sm-2"> 客服編號: </label>
+						<div class="col-sm-8">
+							<input type="text" class="input" id="typeID" v-model="userID_agent">
+						</div>
+					</div>		
+					<div class="form-group col-sm-12 nopadding-horizontal">
+						<label for="typeID" class="col-sm-2"> 客服分機: </label>
+						<div class="col-sm-8">
+							<input type="text" class="input" id="typeID" v-model="dialNO_agent">
+						</div>
+					</div>		
+					<div class="form-group col-sm-12 nopadding-horizontal">
+						<label for="typeID" class="col-sm-2"> 客服姓名: </label>
+						<div class="col-sm-8">
+							<input type="text" class="input" id="typeID" v-model="userName_agent">
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group col-sm-1">
+					<div style="border-left:1px solid #aaa;height:200px"></div>
+				</div>				
+				
+				<div class="form-group col-sm-5">
+					<!-- 請求動作 -->
+					<div class="form-group col-sm-12">
+						<action action_name="updatestatus_ready" v-bind:my_parent="rootObj">準備就緒</action>
+						<action action_name="updatestatus_notready" v-bind:my_parent="rootObj">離席</action>
+						<div class="spacer10"></div>
+						<action action_name="accept_event" v-bind:my_parent="rootObj">接受客戶請求</action>
+						<action action_name="agent_rejectevent" v-bind:my_parent="rootObj">拒絕客戶請求</action>
+						<div class="spacer10"></div>
+						<action action_name="agent_leaveroom" v-bind:my_parent="rootObj">離開聊天視窗</action>
+						<div class="spacer10"></div>
+						<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方邀請</action>
+						<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方回應</action>
+					<div class="spacer10"></div>
+				</div>
+			</div>
+			<hr>
+			</div>
+					
+			<div class="form-group col-sm-12 box">
+				<div class="form-group col-sm-12">
+					<h4 class="title is-4">客戶</h4>
+				</div>
+				<div class="form-group col-sm-6 nopadding">
+					<div class="form-group col-sm-12 nopadding-horizontal">
+						<label for="typeID" class="col-sm-2"> 客戶編號: </label>
+						<div class="col-sm-8">
+							<input type="text" class="input" id="typeID" v-model="userID_client">
+						</div>
+					</div>
+					<div class="form-group col-sm-12 nopadding-horizontal">
+						<label for="typeID" class="col-sm-2"> 進線編號: </label>
+						<div class="col-sm-8">
+							<input type="text" class="input" id="typeID" v-model="callID_client">
+						</div>
+					</div>		
+					<div class="form-group col-sm-12 nopadding-horizontal">
+						<label for="typeID" class="col-sm-2"> 進線資訊: </label>
+						<div class="col-sm-8">
+							<input type="text" class="input" id="typeID" v-model="userName_client">
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group col-sm-1">
+					<div style="border-left:1px solid #aaa;height:200px"></div>
+				</div>
+				
+				<div class="form-group col-sm-4">
+					<!-- 請求動作 -->		
+					<div class="form-group col-sm-12">
+						<action action_name="rsp_senduserdata" v-bind:my_parent="rootObj">將客戶資訊寄給客服人員</action>
+						<div class="spacer10"></div>
+						<action action_name="client_login" v-bind:my_parent="rootObj">客戶登入</action>
+						<div class="spacer10"></div>
+						<action action_name="client_exit" v-bind:my_parent="rootObj">客戶登出</action>
+						<div class="spacer10"></div>
+					</div>
+				</div>
+			</div>			
+
+			
+		</div> <!-- end of "root" div -->
+	</div>
 </body>
 
 
@@ -116,7 +209,8 @@
 <script>
 	Vue.component('action',{
 		template:
-			'<button @click="sendReq">{{ this.action_name }}</button>',
+// 			'<button @click="sendReq"><slot></slot></button>',
+			'<button @click="sendReq" type="button" class="btn info360-btn-default" data-dismiss="modal"><slot></slot></button>',
 		props: {
 			action_name : { required: true },
 			my_parent: {}
