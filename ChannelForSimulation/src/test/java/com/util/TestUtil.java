@@ -19,7 +19,8 @@ public class TestUtil{
 
 	public static String userID_client = UUID.randomUUID().toString();
 	public static String callID_client = UUID.randomUUID().toString();
-	public static String userName_client = "User_" + UUID.randomUUID().toString().substring(0,3);
+//	public static String userName_client = "User_" + UUID.randomUUID().toString().substring(0,3);
+	public static String userName_client = "A123456789";
 	public static String pilotID_client = "1";
 	
 //	public static String userID_agent = UUID.randomUUID().toString();
