@@ -146,9 +146,7 @@
 			</div>
 					
 			<div class="form-group col-sm-12 box">
-				<div class="form-group col-sm-12">
-					<h4 class="title is-4">客戶</h4>
-				</div>
+				<h4 class="title is-4">客戶</h4>
 				<div class="form-group col-sm-6 nopadding">
 					<div class="form-group col-sm-12 nopadding-horizontal">
 						<label for="typeID" class="col-sm-2"> 客戶編號: </label>
