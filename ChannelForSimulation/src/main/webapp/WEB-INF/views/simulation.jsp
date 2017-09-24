@@ -139,6 +139,11 @@
 						<div class="spacer10"></div>
 						<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方邀請</action>
 						<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方回應</action>
+						<div class="spacer10"></div>
+						<action action_name="inviteagentthirdpartyvoice_transferrunnable" v-bind:my_parent="rootObj">轉接邀請</action>
+						<action action_name="responseagentthirdpartyvoice_transferrunnable" v-bind:my_parent="rootObj">轉接回應</action>
+						
+						
 					<div class="spacer10"></div>
 				</div>
 			</div>
@@ -178,6 +183,8 @@
 						<action action_name="rsp_senduserdata" v-bind:my_parent="rootObj">將客戶資訊寄給客服人員</action>
 						<div class="spacer10"></div>
 						<action action_name="client_login" v-bind:my_parent="rootObj">客戶登入</action>
+						<div class="spacer10"></div>
+						<action action_name="setinteraction" v-bind:my_parent="rootObj">更新房間資訊</action>
 						<div class="spacer10"></div>
 						<action action_name="client_exit" v-bind:my_parent="rootObj">客戶登出</action>
 						<div class="spacer10"></div>

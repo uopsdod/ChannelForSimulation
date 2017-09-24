@@ -41,7 +41,7 @@ public class RspSenduserdataRunnable implements Runnable{
 		senduserdataRsp.addProperty("Event", "senduserdata");
 		senduserdataRsp.addProperty("clientName", TestUtil.userName_client);
 		senduserdataRsp.addProperty("clientID", TestUtil.userID_client);
-//		senduserdataRsp.addProperty("clientPilotID", "");
+		senduserdataRsp.addProperty("clientPilotID", TestUtil.pilotID_client);
 		senduserdataRsp.addProperty("clientEntityTypeID", EntityTypeEnum.VOICE.getEntityTypeID());
 		senduserdataRsp.addProperty("entityTypeID", EntityTypeEnum.VOICE.getEntityTypeID());
 		senduserdataRsp.add("userdata", Util.getGJsonObject(TestUtil.userdata));

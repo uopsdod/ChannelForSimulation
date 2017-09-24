@@ -13,14 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.agent.AcceptEventRunnable;
 import com.agent.Inviteagentthirdpartyvoice_ThirdPartyRunnable;
+import com.agent.Inviteagentthirdpartyvoice_TransferRunnable;
 import com.agent.LeaveRoomRunnable;
 import com.agent.RejectEventRunnable;
 import com.agent.ResponseAgentthirdpartyvoice_ThirdPartyRunnable;
+import com.agent.ResponseAgentthirdpartyvoice_TransferRunnable;
 import com.agent.RspSenduserdataRunnable;
 import com.agent.UpdateStatusNotReadyRunnable;
 import com.agent.UpdateStatusReadyRunnable;
 import com.client.ClientExitRunnable;
 import com.client.ClientLoginRunnable;
+import com.client.SetInteractionRunnable;
 import com.util.TestUtil;
 import com.util.Util;
 
@@ -93,8 +96,17 @@ public class RESTfulController {
     	case "inviteagentthirdpartyvoice_thirdpartyrunnable":
     		scheduledExecutorService.submit(new Inviteagentthirdpartyvoice_ThirdPartyRunnable());
     		break;
+    	case "inviteagentthirdpartyvoice_transferrunnable":
+    		scheduledExecutorService.submit(new Inviteagentthirdpartyvoice_TransferRunnable());
+    		break;
     	case "responseagentthirdpartyvoice_thirdpartyrunnable":
     		scheduledExecutorService.submit(new ResponseAgentthirdpartyvoice_ThirdPartyRunnable());
+    		break;
+    	case "responseagentthirdpartyvoice_transferrunnable":
+    		scheduledExecutorService.submit(new ResponseAgentthirdpartyvoice_TransferRunnable());
+    		break;
+    	case "setinteraction":
+    		scheduledExecutorService.submit(new SetInteractionRunnable());
     		break;
 		}
     	
