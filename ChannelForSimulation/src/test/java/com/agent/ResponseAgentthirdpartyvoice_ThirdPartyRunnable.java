@@ -34,8 +34,8 @@ public class ResponseAgentthirdpartyvoice_ThirdPartyRunnable implements Runnable
 		"type":"responseThirdParty",
 		"roomID":"6776b9fa-82b2-414e-84fd-788fb5a8d2c0",
 		"userID":102,
-		"fromAgentID":"101",
-		"invitedAgentID":"102",
+		"fromAgentID":300,
+		"invitedAgentID":"301",
 		"inviteType":"thirdParty",
 		"userdata":{
 			"mapping":{

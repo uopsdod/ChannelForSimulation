@@ -45,7 +45,7 @@ public class SetInteractionRunnable implements Runnable{
 		JsonObject inviteJson = new JsonObject();
 		inviteJson.addProperty("type", "setinteraction");
 		inviteJson.addProperty("userID", TestUtil.userID_client);
-		inviteJson.addProperty("callid", TestUtil.userID_client);
+		inviteJson.addProperty("callid", TestUtil.callID_client); 
 		JsonObject userdataJson = Util.getGJsonObject(TestUtil.userdata);
 		JsonArray customerDataAry = userdataJson.get("CustomerData").getAsJsonArray();
 		JsonObject customerData = customerDataAry.get(0).getAsJsonObject(); 

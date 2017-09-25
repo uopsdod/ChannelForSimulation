@@ -35,8 +35,8 @@ public class Inviteagentthirdpartyvoice_TransferRunnable implements Runnable{
 	"type":"inviteAgentThirdParty",
 	"roomID":"8b2717ab-9dce-4c99-8d7e-15adefb18763",
 	"userID":101,
-	"fromAgentID":101,
-	"invitedAgentID":"102",
+	"fromAgentID":300,
+	"invitedAgentID":"301",
 	"inviteType":"transfer",
 	"userdata":{
 		"mapping":{

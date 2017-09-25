@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.json.JSONObject;
 import org.junit.Test;
@@ -31,6 +32,7 @@ public class ClientLoginRunnable implements Runnable{
 	@Override
 	public void run() {
 		
+
 		/** senduserdata **/
 //		url : RESTful_protocol+"//"+RESTful_hostname+":"+RESTful_port+"/"+RESTful_project+"/RESTful/searchUserdataNew",		
 		/** 建立資料 **/
@@ -62,12 +64,33 @@ public class ClientLoginRunnable implements Runnable{
 		Util.getConsoleLogger().info("searchUserdataNew - contactID: " + contactID);
 		Util.getFileLogger().info("searchUserdataNew - contactID: " + contactID);
 		
-//		
-//		
-//		
-//		userdata_g = data;		
-////			var obj = jQuery.parseJSON(data.data);		
-//		contactID_g = data.CustomerData[0].contactid;				
+		/** ServiceEntry **/
+		/** 建立資料 **/
+		List<AbstractMap.SimpleEntry<String, String>> entryParams = new ArrayList<>();
+		entryParams.add(new AbstractMap.SimpleEntry<>("tenantID",TestUtil.tenantID)); // 要討論,wechat使用者可以傳出tenantID嗎? 還是channelForWechat是要每個公司各一個
+		entryParams.add(new AbstractMap.SimpleEntry<>("typeID",TestUtil.typeID)); // 要討論,wechat使用者可以傳出tenantID嗎? 還是channelForWechat是要每個公司各一個
+		entryParams.add(new AbstractMap.SimpleEntry<>("callid", TestUtil.callID_client));
+		entryParams.add(new AbstractMap.SimpleEntry<>("username",TestUtil.userName_client));
+		entryParams.add(new AbstractMap.SimpleEntry<>("contactid",contactID));
+		entryParams.add(new AbstractMap.SimpleEntry<>("enterkey", TestUtil.userName_client));
+		entryParams.add(new AbstractMap.SimpleEntry<>("channel", TestUtil.entityTypeID));
+		entryParams.add(new AbstractMap.SimpleEntry<>("platfrom",null)); // 瀏覽器資訊
+		entryParams.add(new AbstractMap.SimpleEntry<>("ipaddress", null)); // 瀏覽器資訊
+		entryParams.add(new AbstractMap.SimpleEntry<>("browser", null)); // 瀏覽器資訊
+		entryParams.add(new AbstractMap.SimpleEntry<>("language", null)); // 瀏覽器資訊
+		
+		/** 建立URL字串 **/
+		hostURL = Util.getHostURLStr("RESTful");
+		projectName = Util.getProjectStr("RESTful");
+		urlStr = hostURL + "/" + projectName + "/RESTful/ServiceEntry";
+		
+		/** 寄出請求 **/
+		String entryLogResult = Util.sendHttpPostRequest(urlStr, StandardCharsets.UTF_8, entryParams);		
+		Util.getFileLogger().info("entryLogResult result: " + entryLogResult);
+		
+		/** 抓取結果 **/
+		JsonObject entryLogResultJson = Util.getGJsonObject(entryLogResult);		
+		Util.getFileLogger().info("processRequest - getClickResponse entryLogResultJson: " + entryLogResultJson);
 		
 			
 		/** Login **/
