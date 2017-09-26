@@ -153,18 +153,18 @@
 			<div class="form-group col-sm-12 box">
 				<h4 class="title is-4">客戶</h4>
 				<div class="form-group col-sm-6 nopadding">
-					<div class="form-group col-sm-12 nopadding-horizontal">
-						<label for="typeID" class="col-sm-2"> 客戶編號: </label>
-						<div class="col-sm-8">
-							<input type="text" class="input" id="typeID" v-model="userID_client">
-						</div>
-					</div>
-					<div class="form-group col-sm-12 nopadding-horizontal">
-						<label for="typeID" class="col-sm-2"> 進線編號: </label>
-						<div class="col-sm-8">
-							<input type="text" class="input" id="typeID" v-model="callID_client">
-						</div>
-					</div>		
+<!-- 					<div class="form-group col-sm-12 nopadding-horizontal"> -->
+<!-- 						<label for="typeID" class="col-sm-2"> 客戶編號: </label> -->
+<!-- 						<div class="col-sm-8"> -->
+<!-- 							<input type="text" class="input" id="typeID" v-model="userID_client"> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="form-group col-sm-12 nopadding-horizontal"> -->
+<!-- 						<label for="typeID" class="col-sm-2"> 進線編號: </label> -->
+<!-- 						<div class="col-sm-8"> -->
+<!-- 							<input type="text" class="input" id="typeID" v-model="callID_client"> -->
+<!-- 						</div> -->
+<!-- 					</div>		 -->
 					<div class="form-group col-sm-12 nopadding-horizontal">
 						<label for="typeID" class="col-sm-2"> 進線資訊: </label>
 						<div class="col-sm-8">
@@ -180,9 +180,9 @@
 				<div class="form-group col-sm-4">
 					<!-- 請求動作 -->		
 					<div class="form-group col-sm-12">
-						<action action_name="rsp_senduserdata" v-bind:my_parent="rootObj">將客戶資訊寄給客服人員</action>
-						<div class="spacer10"></div>
 						<action action_name="client_login" v-bind:my_parent="rootObj">客戶登入</action>
+						<div class="spacer10"></div>
+						<action action_name="rsp_senduserdata" v-bind:my_parent="rootObj">將客戶資訊寄給客服人員</action>
 						<div class="spacer10"></div>
 						<action action_name="setinteraction" v-bind:my_parent="rootObj">更新房間資訊</action>
 						<div class="spacer10"></div>

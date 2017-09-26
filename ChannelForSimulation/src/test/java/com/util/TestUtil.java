@@ -14,7 +14,7 @@ import com.google.gson.JsonObject;
 import com.util.Util;
 
 @Component
-public class TestUtil{
+public class TestUtil{ 
 	public static final String TAG = "TestUtil";
 
 	public static String userID_client = UUID.randomUUID().toString();
@@ -26,7 +26,8 @@ public class TestUtil{
 //	public static String userID_agent = UUID.randomUUID().toString();
 
 	public static String userID_agent = "101";
-	public static String dialNO_agent = "19191";
+//	public static String dialNO_agent = "19191";
+	public static String dialNO_agent = "305";
 //	public static String userName_agent = "User_" + UUID.randomUUID().toString().substring(0,3);
 	public static String userName_agent = "BochiLin";
 	
