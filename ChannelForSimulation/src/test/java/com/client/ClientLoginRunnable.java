@@ -94,6 +94,9 @@ public class ClientLoginRunnable implements Runnable{
 		
 			
 		/** Login **/
+		TestUtil.userID_client = UUID.randomUUID().toString();
+		TestUtil.callID_client = UUID.randomUUID().toString();
+		
 		LoginBean loginBean = new LoginBean();
 		loginBean.setACtype("Client");
 //		loginBean.setChannel("wechat");
