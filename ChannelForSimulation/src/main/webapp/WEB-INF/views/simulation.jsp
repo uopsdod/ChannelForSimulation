@@ -171,6 +171,12 @@
 							<input type="text" class="input" id="typeID" v-model="userName_client">
 						</div>
 					</div>
+					<div class="form-group col-sm-12 nopadding-horizontal">
+						<label for="typeID" class="col-sm-2"> 小組編號: </label>
+						<div class="col-sm-8">
+							<input type="text" class="input" id="pilotID_client" v-model="pilotID_client">
+						</div>
+					</div>
 				</div>
 				
 				<div class="form-group col-sm-1">
@@ -238,6 +244,7 @@
 									,userID_client : this.my_parent.userID_client	
 									,callID_client : this.my_parent.callID_client	
 									,userName_client : this.my_parent.userName_client	
+									,pilotID_client : this.my_parent.pilotID_client	
 								};
 // 				var promise = $.post(url, querryData, function() {}, "json");
 				var promise = $.post(url, querryData);
@@ -257,6 +264,7 @@
         		userID_client : '${userID_client}',
         		callID_client : '${callID_client}',
         		userName_client : '${userName_client}',
+        		pilotID_client : '${pilotID_client}',
         		rootObj:this
 //         		isCouponVerified : false,
 //         		coupon_code : ''

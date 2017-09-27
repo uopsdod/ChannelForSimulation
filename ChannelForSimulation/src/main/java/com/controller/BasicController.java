@@ -47,6 +47,7 @@ public class BasicController {
 		model.put("userID_client", TestUtil.userID_client);
 		model.put("callID_client", TestUtil.callID_client);
 		model.put("userName_client", TestUtil.userName_client);
+		model.put("pilotID_client", TestUtil.pilotID_client);
 		return "simulation";
 	}	
 	

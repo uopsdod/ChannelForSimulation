@@ -46,6 +46,7 @@ public class RESTfulController {
     							,@RequestParam(value="userID_client") String userID_client
     							,@RequestParam(value="callID_client") String callID_client
     							,@RequestParam(value="userName_client") String userName_client
+    							,@RequestParam(value="pilotID_client") String pilotID_client
     							) {
     	Util.getConsoleLogger().info(TAG + "/triggerAction starts");
     	Util.getConsoleLogger().info(TAG + "/triggerAction input tenantID: " + tenantID);
@@ -64,6 +65,7 @@ public class RESTfulController {
     	TestUtil.userName_agent = userName_agent;
     	TestUtil.tenantID = tenantID;
     	TestUtil.typeID = typeID;
+    	TestUtil.pilotID_client = pilotID_client;
     	
     	/** 全部轉為小寫 **/
     	actionName = actionName.toLowerCase();
