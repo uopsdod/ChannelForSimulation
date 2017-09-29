@@ -1,7 +1,10 @@
 package com.controller;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javax.sql.DataSource;
 
@@ -12,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.agent.AcceptEventRunnable;
+import com.agent.DialInRspRunnable;
+import com.agent.DialInRunnable;
 import com.agent.Inviteagentthirdpartyvoice_ThirdPartyRunnable;
 import com.agent.Inviteagentthirdpartyvoice_TransferRunnable;
 import com.agent.LeaveRoomRunnable;
@@ -47,7 +52,7 @@ public class RESTfulController {
     							,@RequestParam(value="callID_client") String callID_client
     							,@RequestParam(value="userName_client") String userName_client
     							,@RequestParam(value="pilotID_client") String pilotID_client
-    							) {
+    							) throws InterruptedException {
     	Util.getConsoleLogger().info(TAG + "/triggerAction starts");
     	Util.getConsoleLogger().info(TAG + "/triggerAction input tenantID: " + tenantID);
     	Util.getConsoleLogger().info(TAG + "/triggerAction input typeID: " + typeID);
@@ -63,6 +68,7 @@ public class RESTfulController {
     	TestUtil.userID_agent = userID_agent;
     	TestUtil.dialNO_agent = dialNO_agent;
     	TestUtil.userName_agent = userName_agent;
+    	TestUtil.userName_client = userName_client;
     	TestUtil.tenantID = tenantID;
     	TestUtil.typeID = typeID;
     	TestUtil.pilotID_client = pilotID_client;
@@ -109,6 +115,21 @@ public class RESTfulController {
     		break;
     	case "setinteraction":
     		scheduledExecutorService.submit(new SetInteractionRunnable());
+    		break;
+    	case "dialin":
+    		scheduledExecutorService.submit(new DialInRunnable());
+    		break;
+    	case "dialinrsp":
+    		scheduledExecutorService.submit(new DialInRspRunnable());
+    		break;
+    	case "setinteraction_client_exit":
+    		Future<?> future = scheduledExecutorService.submit(new SetInteractionRunnable());
+    		try {
+				future.get();
+				scheduledExecutorService.submit(new ClientExitRunnable());
+			} catch (ExecutionException e) {
+				e.printStackTrace();
+			}
     		break;
 		}
     	

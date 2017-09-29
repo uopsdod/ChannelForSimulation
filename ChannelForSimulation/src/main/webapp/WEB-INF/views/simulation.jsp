@@ -136,6 +136,10 @@
 						<action action_name="agent_rejectevent" v-bind:my_parent="rootObj">拒絕客戶請求</action>
 						<div class="spacer10"></div>
 						<action action_name="agent_leaveroom" v-bind:my_parent="rootObj">離開聊天視窗</action>
+						<div class="spacer10"></div>
+						<action action_name="dialin" v-bind:my_parent="rootObj">撥打外線分機</action>
+						<div class="spacer10"></div>
+						<action action_name="dialinrsp" v-bind:my_parent="rootObj">接受外線分機</action>
 <!-- 						<div class="spacer10"></div> -->
 <!-- 						<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方邀請</action> -->
 <!-- 						<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方回應</action> -->
@@ -190,10 +194,34 @@
 						<div class="spacer10"></div>
 						<action action_name="rsp_senduserdata" v-bind:my_parent="rootObj">將客戶資訊寄給客服人員</action>
 						<div class="spacer10"></div>
-						<action action_name="setinteraction" v-bind:my_parent="rootObj">更新房間資訊</action>
-						<div class="spacer10"></div>
-						<action action_name="client_exit" v-bind:my_parent="rootObj">客戶登出</action>
-						<div class="spacer10"></div>
+						<table>
+						  <tr>
+						    <td rowspan="2">
+								<div class="spacer15"></div>
+						    	<action action_name="setinteraction_client_exit" v-bind:my_parent="rootObj">電話結束</action>
+						    </td>
+						    <td>
+						    	<action action_name="setinteraction" v-bind:my_parent="rootObj">更新房間資訊</action>
+						    </td>
+						  </tr>
+						  <tr>
+						    <td>
+						    	<action action_name="client_exit" v-bind:my_parent="rootObj">客戶登出</action>
+						    </td>
+						  </tr>
+						</table>
+						
+						
+<!-- 						<div class="form-group col-sm-6"> -->
+<!-- 							<action action_name="setinteraction" v-bind:my_parent="rootObj">電話結束&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</action> -->
+<!-- 							<div class="spacer10"></div> -->
+<!-- 						</div> -->
+<!-- 						<div class="form-group col-sm-6"> -->
+<!-- 							<action action_name="setinteraction" v-bind:my_parent="rootObj">更新房間資訊</action> -->
+<!-- 							<div class="spacer10"></div> -->
+<!-- 							<action action_name="client_exit" v-bind:my_parent="rootObj">客戶登出</action> -->
+<!-- 							<div class="spacer10"></div> -->
+<!-- 						</div> -->
 					</div>
 				</div>
 			</div>			
