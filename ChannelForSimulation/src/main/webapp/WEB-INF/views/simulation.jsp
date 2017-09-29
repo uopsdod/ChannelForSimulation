@@ -135,11 +135,13 @@
 						<action action_name="accept_event" v-bind:my_parent="rootObj">接受客戶請求</action>
 						<action action_name="agent_rejectevent" v-bind:my_parent="rootObj">拒絕客戶請求</action>
 						<div class="spacer10"></div>
-						<action action_name="agent_leaveroom" v-bind:my_parent="rootObj">離開聊天視窗</action>
+						<action action_name="agent_leaveroom" v-bind:my_parent="rootObj">離開一般通話</action>
 						<div class="spacer10"></div>
 						<action action_name="dialin" v-bind:my_parent="rootObj">撥打外線分機</action>
 						<div class="spacer10"></div>
 						<action action_name="dialinrsp" v-bind:my_parent="rootObj">接受外線分機</action>
+						<div class="spacer10"></div>
+						<action action_name="agent_leavedialinroom" v-bind:my_parent="rootObj">離開外線分機通話</action>
 <!-- 						<div class="spacer10"></div> -->
 <!-- 						<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方邀請</action> -->
 <!-- 						<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方回應</action> -->

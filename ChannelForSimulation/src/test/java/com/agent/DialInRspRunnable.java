@@ -47,6 +47,7 @@ public class DialInRspRunnable implements Runnable{
 		dialInJson.addProperty("fromUserDialNo", TestUtil.dialNO_agent);
 		dialInJson.addProperty("invitedUserDialNo", TestUtil.dialNO_agent02);
 		dialInJson.addProperty("dialType", "dialIn");
+		dialInJson.addProperty("dialInRoomID", TestUtil.dialInRoomID);
 		
 		dialInJson.addProperty("respone", "accept");
 		

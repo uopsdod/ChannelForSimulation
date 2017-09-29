@@ -26,9 +26,21 @@ import com.util.EntityTypeEnum;
 import com.util.TestUtil;
 import com.util.Util;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
+/**
+ * 一般,外線分機 共用此Runnable
+ * @author sam
+ *
+ */
 public class LeaveRoomRunnable implements Runnable{
+	
+	private String roomID;
+	private String type;
+	
+	public LeaveRoomRunnable(String aRoomID, String aType) {
+		this.roomID = aRoomID;
+		this.type = aType;
+	}
+	
 //	@Test
 //	public void contexLoads() throws Exception {
 //	}
@@ -46,9 +58,9 @@ public class LeaveRoomRunnable implements Runnable{
 			
 			/** 蒐集房間成員list **/
 			JsonObject leaveroomJson = new JsonObject();
-			leaveroomJson.addProperty("type", "leaveroom");
+			leaveroomJson.addProperty("type", this.type);
 			leaveroomJson.addProperty("userID", TestUtil.dialNO_agent);
-			leaveroomJson.addProperty("roomID", TestUtil.roomID);
+			leaveroomJson.addProperty("roomID", this.roomID);
 			leaveroomJson.addProperty("channel", TestUtil.entityTypeID);
 			leaveroomJson.addProperty("entityTypeID", TestUtil.entityTypeID);
 			

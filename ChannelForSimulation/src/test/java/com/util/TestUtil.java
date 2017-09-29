@@ -36,6 +36,7 @@ public class TestUtil{
 	public static String userName_agent02 = "User_" + UUID.randomUUID().toString().substring(0,3);
 	
 	public static String roomID = UUID.randomUUID().toString();
+	public static String dialInRoomID = UUID.randomUUID().toString();
 	
 	public static String tenantID = "3";
 	public static String typeID = "2";
