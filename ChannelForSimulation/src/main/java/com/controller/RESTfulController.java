@@ -123,7 +123,8 @@ public class RESTfulController {
     		scheduledExecutorService.submit(new DialInRspRunnable());
     		break;
     	case "agent_leavedialinroom":
-    		scheduledExecutorService.submit(new LeaveRoomRunnable(TestUtil.dialInRoomID, "leavedialinroom"));
+//    		scheduledExecutorService.submit(new LeaveRoomRunnable(TestUtil.dialInRoomID, "leavedialinroom"));
+    		scheduledExecutorService.submit(new LeaveRoomRunnable(TestUtil.dialInRoomID, "leaveroom")); // 回歸老本行
     		break;
     	case "setinteraction_client_exit":
     		Future<?> future = scheduledExecutorService.submit(new SetInteractionRunnable());

@@ -59,7 +59,8 @@ public class AcceptEventRunnable implements Runnable{
 		
 		AcceptEventBean acceptEventBean = new AcceptEventBean();
 		acceptEventBean.setUserID(TestUtil.dialNO_agent);
-		acceptEventBean.setRoomID(TestUtil.roomID);
+//		acceptEventBean.setRoomID(TestUtil.roomID);
+		acceptEventBean.setRoomID("305|307");
 		acceptEventBean.setMemberListToJoin(memberListToJoinJsonAry);
 		acceptEventBean.setChannel(TestUtil.entityTypeID);
 		acceptEventBean.setEntityTypeID(TestUtil.entityTypeID);
