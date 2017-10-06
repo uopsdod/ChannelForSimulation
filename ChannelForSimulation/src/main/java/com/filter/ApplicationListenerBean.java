@@ -11,6 +11,7 @@ import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 import com.bean.GetEntityTypeAsListCallable;
+import com.test.TableDateTransfer;
 import com.util.Util;
 
 public class ApplicationListenerBean implements ApplicationListener {
@@ -23,10 +24,12 @@ public class ApplicationListenerBean implements ApplicationListener {
         if (event instanceof ContextRefreshedEvent) {
         	Util.getConsoleLogger().info("ContextRefreshedEvent start ###################");
         	Util.getFileLogger().info("ContextRefreshedEvent start ###################");
-     		
+     		 
     		/** 更新EntityType Enum **/
-    		scheduledExecutorService.submit(new GetEntityTypeAsListCallable());
+//    		scheduledExecutorService.submit(new GetEntityTypeAsListCallable());
         	
+    		scheduledExecutorService.submit(new TableDateTransfer());
+    		
         	Util.getConsoleLogger().info("ContextRefreshedEvent end ###################");
         	Util.getFileLogger().info("ContextRefreshedEvent end ###################");
         }

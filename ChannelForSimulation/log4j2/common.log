@@ -2460,3 +2460,526 @@
 [17/10/03 14:18:50.308][ INFO][com.util.Util                      -208  ] - sendHttpPostRequest end
 [17/10/03 14:18:50.308][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: 
 [17/10/03 14:18:50.309][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 15:27:38.593][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 15:27:38.594][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 15:27:38.594][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 15:27:41.757][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 15:27:41.867][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 15:27:41.872][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 15:27:42.080][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 15:27:42.089][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http//localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 15:27:42.093][ INFO][com.util.Util                      -206  ] - sendHttpPostRequest() Util.getExceptionMsg(e): java.net.MalformedURLException: no protocol: http//localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+	at java.net.URL.<init>(URL.java:593)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at com.util.Util.sendHttpPostRequest(Util.java:203)
+	at com.bean.GetEntityTypeAsListCallable.getEntityTypeAsList(GetEntityTypeAsListCallable.java:61)
+	at com.bean.GetEntityTypeAsListCallable.call(GetEntityTypeAsListCallable.java:21)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 15:27:42.094][ INFO][com.util.Util                      -208  ] - sendHttpPostRequest end
+[17/10/03 15:27:42.095][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: 
+[17/10/03 15:27:42.095][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 15:28:36.692][ INFO][com.agent.UpdateStatusReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:28:38.652][ INFO][com.agent.UpdateStatusNotReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:28:40.347][ INFO][com.client.ClientLoginRunnable     -48   ] - searchUserdataNew urlStr: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+[17/10/03 15:28:40.348][ INFO][com.util.Util                      -206  ] - sendHttpPostRequest() Util.getExceptionMsg(e): java.net.MalformedURLException: no protocol: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+	at java.net.URL.<init>(URL.java:593)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at com.util.Util.sendHttpPostRequest(Util.java:203)
+	at com.client.ClientLoginRunnable.run(ClientLoginRunnable.java:53)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 15:28:40.348][ INFO][com.util.Util                      -208  ] - sendHttpPostRequest end
+[17/10/03 15:28:40.349][ INFO][com.client.ClientLoginRunnable     -55   ] - searchUserdataNew result: 
+[17/10/03 15:28:40.349][ INFO][com.util.Util                      -107  ] - getGJsonArray getGJsonArray
+[17/10/03 15:28:40.349][ INFO][com.util.Util                      -108  ] - getGJsonArray input aObj: null
+[17/10/03 15:28:40.349][ INFO][com.util.Util                      -109  ] - getGJsonArray input aKey: CustomerData
+[17/10/03 15:40:02.663][ INFO][com.agent.UpdateStatusReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:40:05.342][ INFO][com.agent.UpdateStatusNotReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:40:07.706][ INFO][com.client.ClientLoginRunnable     -48   ] - searchUserdataNew urlStr: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+[17/10/03 15:40:07.707][ INFO][com.util.Util                      -206  ] - sendHttpPostRequest() Util.getExceptionMsg(e): java.net.MalformedURLException: no protocol: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+	at java.net.URL.<init>(URL.java:593)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at com.util.Util.sendHttpPostRequest(Util.java:203)
+	at com.client.ClientLoginRunnable.run(ClientLoginRunnable.java:53)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 15:40:07.707][ INFO][com.util.Util                      -208  ] - sendHttpPostRequest end
+[17/10/03 15:40:07.708][ INFO][com.client.ClientLoginRunnable     -55   ] - searchUserdataNew result: 
+[17/10/03 15:40:07.708][ INFO][com.util.Util                      -107  ] - getGJsonArray getGJsonArray
+[17/10/03 15:40:07.708][ INFO][com.util.Util                      -108  ] - getGJsonArray input aObj: null
+[17/10/03 15:40:07.708][ INFO][com.util.Util                      -109  ] - getGJsonArray input aKey: CustomerData
+[17/10/03 15:43:44.846][ INFO][com.client.ClientLoginRunnable     -48   ] - searchUserdataNew urlStr: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+[17/10/03 15:43:44.847][ INFO][com.util.Util                      -206  ] - sendHttpPostRequest() Util.getExceptionMsg(e): java.net.MalformedURLException: no protocol: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+	at java.net.URL.<init>(URL.java:593)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at com.util.Util.sendHttpPostRequest(Util.java:203)
+	at com.client.ClientLoginRunnable.run(ClientLoginRunnable.java:53)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 15:43:44.850][ INFO][com.util.Util                      -208  ] - sendHttpPostRequest end
+[17/10/03 15:43:44.851][ INFO][com.client.ClientLoginRunnable     -55   ] - searchUserdataNew result: 
+[17/10/03 15:43:44.851][ INFO][com.util.Util                      -107  ] - getGJsonArray getGJsonArray
+[17/10/03 15:43:44.852][ INFO][com.util.Util                      -108  ] - getGJsonArray input aObj: null
+[17/10/03 15:43:44.852][ INFO][com.util.Util                      -109  ] - getGJsonArray input aKey: CustomerData
+[17/10/03 15:43:59.262][ INFO][com.client.ClientLoginRunnable     -48   ] - searchUserdataNew urlStr: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+[17/10/03 15:43:59.264][ INFO][com.util.Util                      -206  ] - sendHttpPostRequest() Util.getExceptionMsg(e): java.net.MalformedURLException: no protocol: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+	at java.net.URL.<init>(URL.java:593)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at com.util.Util.sendHttpPostRequest(Util.java:203)
+	at com.client.ClientLoginRunnable.run(ClientLoginRunnable.java:53)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 15:43:59.265][ INFO][com.util.Util                      -208  ] - sendHttpPostRequest end
+[17/10/03 15:43:59.265][ INFO][com.client.ClientLoginRunnable     -55   ] - searchUserdataNew result: 
+[17/10/03 15:43:59.266][ INFO][com.util.Util                      -107  ] - getGJsonArray getGJsonArray
+[17/10/03 15:43:59.266][ INFO][com.util.Util                      -108  ] - getGJsonArray input aObj: null
+[17/10/03 15:43:59.266][ INFO][com.util.Util                      -109  ] - getGJsonArray input aKey: CustomerData
+[17/10/03 15:44:20.877][ INFO][com.agent.UpdateStatusReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:44:22.334][ INFO][com.agent.UpdateStatusNotReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:44:33.857][ INFO][com.client.ClientLoginRunnable     -48   ] - searchUserdataNew urlStr: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+[17/10/03 15:44:33.858][ INFO][com.util.Util                      -206  ] - sendHttpPostRequest() Util.getExceptionMsg(e): java.net.MalformedURLException: no protocol: http//localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+	at java.net.URL.<init>(URL.java:593)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at com.util.Util.sendHttpPostRequest(Util.java:203)
+	at com.client.ClientLoginRunnable.run(ClientLoginRunnable.java:53)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 15:44:33.858][ INFO][com.util.Util                      -208  ] - sendHttpPostRequest end
+[17/10/03 15:44:33.866][ INFO][com.client.ClientLoginRunnable     -55   ] - searchUserdataNew result: 
+[17/10/03 15:44:33.867][ INFO][com.util.Util                      -107  ] - getGJsonArray getGJsonArray
+[17/10/03 15:44:33.867][ INFO][com.util.Util                      -108  ] - getGJsonArray input aObj: null
+[17/10/03 15:44:33.867][ INFO][com.util.Util                      -109  ] - getGJsonArray input aKey: CustomerData
+[17/10/03 15:45:10.155][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 15:45:10.156][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 15:45:10.156][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 15:45:10.164][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 15:45:10.164][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 15:45:15.361][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 15:45:15.361][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 15:45:15.362][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 15:45:17.270][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 15:45:17.280][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 15:45:17.281][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 15:45:17.338][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 15:45:17.369][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http//localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 15:45:17.378][ INFO][com.util.Util                      -206  ] - sendHttpPostRequest() Util.getExceptionMsg(e): java.net.MalformedURLException: no protocol: http//localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+	at java.net.URL.<init>(URL.java:593)
+	at java.net.URL.<init>(URL.java:490)
+	at java.net.URL.<init>(URL.java:439)
+	at com.util.Util.sendHttpPostRequest(Util.java:203)
+	at com.bean.GetEntityTypeAsListCallable.getEntityTypeAsList(GetEntityTypeAsListCallable.java:61)
+	at com.bean.GetEntityTypeAsListCallable.call(GetEntityTypeAsListCallable.java:21)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 15:45:17.378][ INFO][com.util.Util                      -208  ] - sendHttpPostRequest end
+[17/10/03 15:45:17.379][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: 
+[17/10/03 15:45:17.379][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 15:47:32.437][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 15:47:32.438][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 15:47:32.438][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 15:47:32.439][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 15:47:32.440][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 15:47:35.221][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 15:47:35.221][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 15:47:35.222][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 15:47:35.819][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 15:47:35.825][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 15:47:35.830][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 15:47:35.831][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 15:47:35.832][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 15:47:40.184][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 15:47:40.184][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 15:49:07.994][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 15:49:07.994][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 15:49:07.994][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 15:49:09.632][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 15:49:09.654][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 15:49:09.656][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 15:49:09.662][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 15:49:09.671][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 15:49:10.263][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 15:49:10.263][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 15:49:18.329][ INFO][com.agent.UpdateStatusReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:49:19.342][ INFO][com.agent.UpdateStatusNotReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:49:25.188][ INFO][com.client.ClientLoginRunnable     -48   ] - searchUserdataNew urlStr: http://localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+[17/10/03 15:49:25.763][ INFO][com.client.ClientLoginRunnable     -55   ] - searchUserdataNew result: {"mapping":{"Message":{"phone":{"displayName":"電話","dbid":"22","sort":"1","defaultName":"phone"},"contactID":{"displayName":"contactID","dbid":"24","defaultName":"contactID"},"name":{"displayName":"姓名","dbid":"23","sort":"2","defaultName":"name"},"id":{"displayName":"身分證字號","dbid":"21","sort":"0","defaultName":"id"}}},"CustomerData":[{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}],"tenantID":"3","typeID":"2"}
+[17/10/03 15:49:25.764][ INFO][com.util.Util                      -107  ] - getGJsonArray getGJsonArray
+[17/10/03 15:49:25.764][ INFO][com.util.Util                      -108  ] - getGJsonArray input aObj: {"mapping":{"Message":{"phone":{"displayName":"電話","dbid":"22","sort":"1","defaultName":"phone"},"contactID":{"displayName":"contactID","dbid":"24","defaultName":"contactID"},"name":{"displayName":"姓名","dbid":"23","sort":"2","defaultName":"name"},"id":{"displayName":"身分證字號","dbid":"21","sort":"0","defaultName":"id"}}},"CustomerData":[{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}],"tenantID":"3","typeID":"2"}
+[17/10/03 15:49:25.765][ INFO][com.util.Util                      -109  ] - getGJsonArray input aKey: CustomerData
+[17/10/03 15:49:25.765][ INFO][com.util.Util                      -111  ] - getGJsonArray jsonElmt: [{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}]
+[17/10/03 15:49:25.765][ INFO][com.client.ClientLoginRunnable     -65   ] - searchUserdataNew - contactID: 2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4
+[17/10/03 15:49:25.891][ INFO][com.client.ClientLoginRunnable     -89   ] - entryLogResult result: {"callID":"51263854-ded6-4bdb-ad99-3131645765b7"}
+[17/10/03 15:49:25.891][ INFO][com.client.ClientLoginRunnable     -93   ] - processRequest - getClickResponse entryLogResultJson: {"callID":"51263854-ded6-4bdb-ad99-3131645765b7"}
+[17/10/03 15:51:23.414][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 15:51:23.415][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 15:51:23.415][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 15:51:23.417][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 15:51:23.417][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 15:51:27.483][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 15:51:27.483][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 15:51:27.483][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 15:51:28.247][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 15:51:28.260][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 15:51:28.262][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 15:51:28.267][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 15:51:28.269][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 15:51:28.832][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 15:51:28.832][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 15:51:41.184][ INFO][com.agent.UpdateStatusReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:52:34.117][ INFO][com.agent.UpdateStatusReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:52:38.526][ INFO][com.agent.UpdateStatusNotReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:52:40.620][ INFO][com.client.ClientLoginRunnable     -48   ] - searchUserdataNew urlStr: http://localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+[17/10/03 15:52:41.101][ INFO][com.client.ClientLoginRunnable     -55   ] - searchUserdataNew result: {"mapping":{"Message":{"phone":{"displayName":"電話","dbid":"22","sort":"1","defaultName":"phone"},"contactID":{"displayName":"contactID","dbid":"24","defaultName":"contactID"},"name":{"displayName":"姓名","dbid":"23","sort":"2","defaultName":"name"},"id":{"displayName":"身分證字號","dbid":"21","sort":"0","defaultName":"id"}}},"CustomerData":[{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}],"tenantID":"3","typeID":"2"}
+[17/10/03 15:52:41.102][ INFO][com.util.Util                      -107  ] - getGJsonArray getGJsonArray
+[17/10/03 15:52:41.102][ INFO][com.util.Util                      -108  ] - getGJsonArray input aObj: {"mapping":{"Message":{"phone":{"displayName":"電話","dbid":"22","sort":"1","defaultName":"phone"},"contactID":{"displayName":"contactID","dbid":"24","defaultName":"contactID"},"name":{"displayName":"姓名","dbid":"23","sort":"2","defaultName":"name"},"id":{"displayName":"身分證字號","dbid":"21","sort":"0","defaultName":"id"}}},"CustomerData":[{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}],"tenantID":"3","typeID":"2"}
+[17/10/03 15:52:41.102][ INFO][com.util.Util                      -109  ] - getGJsonArray input aKey: CustomerData
+[17/10/03 15:52:41.103][ INFO][com.util.Util                      -111  ] - getGJsonArray jsonElmt: [{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}]
+[17/10/03 15:52:41.103][ INFO][com.client.ClientLoginRunnable     -65   ] - searchUserdataNew - contactID: 2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4
+[17/10/03 15:52:41.218][ INFO][com.client.ClientLoginRunnable     -89   ] - entryLogResult result: {"callID":"87fcbf59-62db-42a8-9625-96403635d393"}
+[17/10/03 15:52:41.218][ INFO][com.client.ClientLoginRunnable     -93   ] - processRequest - getClickResponse entryLogResultJson: {"callID":"87fcbf59-62db-42a8-9625-96403635d393"}
+[17/10/03 15:52:48.098][ INFO][com.agent.UpdateStatusReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:56:09.556][ INFO][com.agent.UpdateStatusNotReadyRunnable-27   ] - onApplicationEvent here01
+[17/10/03 15:56:24.132][ INFO][com.client.ClientLoginRunnable     -48   ] - searchUserdataNew urlStr: http://localhost:8080/Info360WebAPI/RESTful/searchUserdataNew
+[17/10/03 15:56:24.514][ INFO][com.client.ClientLoginRunnable     -55   ] - searchUserdataNew result: {"mapping":{"Message":{"phone":{"displayName":"電話","dbid":"22","sort":"1","defaultName":"phone"},"contactID":{"displayName":"contactID","dbid":"24","defaultName":"contactID"},"name":{"displayName":"姓名","dbid":"23","sort":"2","defaultName":"name"},"id":{"displayName":"身分證字號","dbid":"21","sort":"0","defaultName":"id"}}},"CustomerData":[{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}],"tenantID":"3","typeID":"2"}
+[17/10/03 15:56:24.514][ INFO][com.util.Util                      -107  ] - getGJsonArray getGJsonArray
+[17/10/03 15:56:24.514][ INFO][com.util.Util                      -108  ] - getGJsonArray input aObj: {"mapping":{"Message":{"phone":{"displayName":"電話","dbid":"22","sort":"1","defaultName":"phone"},"contactID":{"displayName":"contactID","dbid":"24","defaultName":"contactID"},"name":{"displayName":"姓名","dbid":"23","sort":"2","defaultName":"name"},"id":{"displayName":"身分證字號","dbid":"21","sort":"0","defaultName":"id"}}},"CustomerData":[{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}],"tenantID":"3","typeID":"2"}
+[17/10/03 15:56:24.515][ INFO][com.util.Util                      -109  ] - getGJsonArray input aKey: CustomerData
+[17/10/03 15:56:24.515][ INFO][com.util.Util                      -111  ] - getGJsonArray jsonElmt: [{"phone":"0921888219","contactid":"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4","name":"李伯夷","callnoticeList":"[{\"data\":\"此客戶態度良好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":1,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-25 23:37:17.0\"},{\"data\":\"此客戶態度真的很好\",\"contactID\":\"2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4\",\"dbid\":2,\"tenantID\":\"3\",\"typeID\":\"2\",\"createDate\":\"2017-09-26 11:38:38.0\"}]","id":"A123456789"}]
+[17/10/03 15:56:24.515][ INFO][com.client.ClientLoginRunnable     -65   ] - searchUserdataNew - contactID: 2eb9b90e-ee81-4ccd-be9a-b6fa43cc7fd4
+[17/10/03 15:56:24.623][ INFO][com.client.ClientLoginRunnable     -89   ] - entryLogResult result: {"callID":"eff582a4-cbe6-4323-aee4-bfc3532c43d3"}
+[17/10/03 15:56:24.624][ INFO][com.client.ClientLoginRunnable     -93   ] - processRequest - getClickResponse entryLogResultJson: {"callID":"eff582a4-cbe6-4323-aee4-bfc3532c43d3"}
+[17/10/03 18:18:50.885][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:18:50.887][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:18:50.887][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:18:50.905][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:18:50.906][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:18:56.731][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:18:56.732][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:18:56.732][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:18:57.794][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:18:57.799][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:18:57.801][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:18:57.813][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:18:57.814][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:19:02.231][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:19:02.231][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:19:06.066][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:19:06.066][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:19:06.066][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:19:06.066][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:19:06.067][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:19:07.831][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:19:07.833][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:19:07.837][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:19:08.119][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:19:08.125][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:19:08.128][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:19:08.129][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:19:08.130][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:19:08.322][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:19:08.323][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:19:18.347][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:19:18.347][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:19:18.347][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:19:18.348][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:19:18.348][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:19:21.160][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:19:21.160][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:19:21.161][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:19:21.727][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:19:21.733][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:19:21.734][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:19:21.759][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:19:21.759][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:19:22.086][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:19:22.086][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:19:54.467][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:19:54.467][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:19:54.480][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:19:54.483][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:19:54.493][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:19:56.469][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:19:56.469][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:19:56.469][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:19:56.899][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:19:56.902][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:19:56.903][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:19:56.910][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:19:56.911][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:19:59.104][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:19:59.104][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:20:08.582][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:20:08.582][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:20:08.583][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:20:08.583][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:20:08.583][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:20:10.442][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:20:10.442][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:20:10.442][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:20:10.962][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:20:10.967][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:20:10.970][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:20:10.980][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:20:10.981][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:20:13.911][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:20:13.911][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:20:15.343][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:20:15.343][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:20:15.343][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:20:15.343][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:20:15.344][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:20:16.783][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:20:16.783][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:20:16.783][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:20:17.134][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:20:17.137][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:20:17.138][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:20:17.142][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:20:17.142][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:20:17.298][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:20:17.298][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:20:25.130][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:20:25.130][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:20:25.130][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:20:25.131][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:20:25.132][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:20:26.643][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:20:26.644][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:20:26.644][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:20:26.875][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:20:26.881][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:20:26.882][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:20:26.882][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:20:26.883][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:20:28.550][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:20:28.550][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:51:42.809][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:51:42.810][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:51:42.810][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:51:42.815][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:51:42.815][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:51:46.507][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:51:46.508][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:51:46.508][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:51:46.900][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:51:46.910][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:51:46.914][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:51:46.921][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:51:46.922][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:51:47.585][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:51:47.585][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:53:55.278][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:53:55.279][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:53:55.279][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:53:55.284][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:53:55.284][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:53:57.771][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:53:57.772][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:53:57.772][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:53:57.947][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:53:57.949][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:53:57.951][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:53:57.951][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:53:57.951][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:53:58.216][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:53:58.216][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:56:03.657][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:56:03.658][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:56:03.658][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:56:03.658][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:56:03.659][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:56:05.502][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:56:05.502][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:56:05.502][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:56:05.728][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:56:05.734][ INFO][com.filter.ApplicationListenerBean -25   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:56:05.735][ INFO][com.filter.ApplicationListenerBean -31   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:56:05.737][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:56:05.745][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:56:07.712][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:56:07.713][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:56:24.871][ INFO][com.filter.ApplicationListenerBean -36   ] - ContextClosedEvent start ###################
+[17/10/03 18:56:24.871][ INFO][com.filter.ApplicationListenerBean -40   ] - contextDestroyed() called
+[17/10/03 18:56:24.871][ INFO][com.filter.ApplicationListenerBean -47   ] - attempt to shutdown executor
+[17/10/03 18:56:24.871][ INFO][com.filter.ApplicationListenerBean -59   ] - shutdown finished
+[17/10/03 18:56:24.872][ INFO][com.filter.ApplicationListenerBean -64   ] - ContextClosedEvent end ###################
+[17/10/03 18:56:26.404][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:56:26.404][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:56:26.405][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:56:26.697][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:56:32.561][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:56:32.561][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:56:32.562][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:56:32.691][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:56:32.693][ INFO][com.filter.ApplicationListenerBean -26   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:56:32.694][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[17/10/03 18:56:32.694][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[17/10/03 18:56:32.694][ INFO][com.test.TableDateTransfer         -103  ] - getEntityTypeAsList starts
+[17/10/03 18:56:32.694][ INFO][com.filter.ApplicationListenerBean -34   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:56:32.695][ INFO][com.test.TableDateTransfer         -115  ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+[17/10/03 18:56:32.772][ INFO][com.util.Util                      -243  ] - sendHttpPostRequest start input - IOException: java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1876)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.util.Util.sendHttpPostRequest(Util.java:230)
+	at com.test.TableDateTransfer.run(TableDateTransfer.java:120)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 18:56:32.772][ INFO][com.test.TableDateTransfer         -122  ] - getEntityTypeAsList result: 
+[17/10/03 18:56:32.773][ INFO][com.test.TableDateTransfer         -124  ] - getEntityTypeAsList ends
+[17/10/03 18:56:37.287][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[17/10/03 18:56:37.287][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[17/10/03 18:56:42.370][ INFO][com.filter.ApplicationListenerBean -39   ] - ContextClosedEvent start ###################
+[17/10/03 18:56:42.370][ INFO][com.filter.ApplicationListenerBean -43   ] - contextDestroyed() called
+[17/10/03 18:56:42.370][ INFO][com.filter.ApplicationListenerBean -50   ] - attempt to shutdown executor
+[17/10/03 18:56:42.371][ INFO][com.filter.ApplicationListenerBean -62   ] - shutdown finished
+[17/10/03 18:56:42.371][ INFO][com.filter.ApplicationListenerBean -67   ] - ContextClosedEvent end ###################
+[17/10/03 18:56:43.931][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:56:43.931][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:56:43.931][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:56:44.163][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:56:44.167][ INFO][com.filter.ApplicationListenerBean -26   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:56:44.168][ INFO][com.filter.ApplicationListenerBean -34   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:56:44.168][ INFO][com.test.TableDateTransfer         -103  ] - getEntityTypeAsList starts
+[17/10/03 18:56:44.169][ INFO][com.test.TableDateTransfer         -115  ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+[17/10/03 18:56:44.184][ INFO][com.util.Util                      -243  ] - sendHttpPostRequest start input - IOException: java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1876)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.util.Util.sendHttpPostRequest(Util.java:230)
+	at com.test.TableDateTransfer.run(TableDateTransfer.java:120)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 18:56:44.185][ INFO][com.test.TableDateTransfer         -122  ] - getEntityTypeAsList result: 
+[17/10/03 18:56:44.185][ INFO][com.test.TableDateTransfer         -124  ] - getEntityTypeAsList ends
+[17/10/03 18:56:45.999][ INFO][com.filter.ApplicationListenerBean -39   ] - ContextClosedEvent start ###################
+[17/10/03 18:56:45.999][ INFO][com.filter.ApplicationListenerBean -43   ] - contextDestroyed() called
+[17/10/03 18:56:46.000][ INFO][com.filter.ApplicationListenerBean -50   ] - attempt to shutdown executor
+[17/10/03 18:56:46.000][ INFO][com.filter.ApplicationListenerBean -62   ] - shutdown finished
+[17/10/03 18:56:46.000][ INFO][com.filter.ApplicationListenerBean -67   ] - ContextClosedEvent end ###################
+[17/10/03 18:56:47.670][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/03 18:56:47.670][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/03 18:56:47.671][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/03 18:56:47.867][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/03 18:56:47.870][ INFO][com.filter.ApplicationListenerBean -26   ] - ContextRefreshedEvent start ###################
+[17/10/03 18:56:47.872][ INFO][com.filter.ApplicationListenerBean -34   ] - ContextRefreshedEvent end ###################
+[17/10/03 18:56:47.883][ INFO][com.test.TableDateTransfer         -103  ] - getEntityTypeAsList starts
+[17/10/03 18:56:47.884][ INFO][com.test.TableDateTransfer         -115  ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+[17/10/03 18:56:47.926][ INFO][com.util.Util                      -243  ] - sendHttpPostRequest start input - IOException: java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1876)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.util.Util.sendHttpPostRequest(Util.java:230)
+	at com.test.TableDateTransfer.run(TableDateTransfer.java:120)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/03 18:56:47.927][ INFO][com.test.TableDateTransfer         -122  ] - getEntityTypeAsList result: 
+[17/10/03 18:56:47.927][ INFO][com.test.TableDateTransfer         -124  ] - getEntityTypeAsList ends
+[17/10/06 14:17:11.367][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/06 14:17:11.368][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/06 14:17:11.368][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/06 14:17:13.757][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/06 14:17:13.785][ INFO][com.filter.ApplicationListenerBean -26   ] - ContextRefreshedEvent start ###################
+[17/10/06 14:17:13.810][ INFO][com.filter.ApplicationListenerBean -34   ] - ContextRefreshedEvent end ###################
+[17/10/06 14:17:13.824][ INFO][com.test.TableDateTransfer         -103  ] - getEntityTypeAsList starts
+[17/10/06 14:17:13.839][ INFO][com.test.TableDateTransfer         -115  ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+[17/10/06 14:17:13.923][ INFO][com.util.Util                      -243  ] - sendHttpPostRequest start input - IOException: java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1876)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.util.Util.sendHttpPostRequest(Util.java:230)
+	at com.test.TableDateTransfer.run(TableDateTransfer.java:120)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/06 14:17:13.924][ INFO][com.test.TableDateTransfer         -122  ] - getEntityTypeAsList result: 
+[17/10/06 14:17:13.924][ INFO][com.test.TableDateTransfer         -124  ] - getEntityTypeAsList ends
+[17/10/06 15:09:29.740][ INFO][com.util.Util                      -65   ] - Util() start
+[17/10/06 15:09:29.741][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[17/10/06 15:09:29.741][ INFO][com.util.Util                      -69   ] - Util() end
+[17/10/06 15:09:31.860][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[17/10/06 15:09:31.878][ INFO][com.filter.ApplicationListenerBean -26   ] - ContextRefreshedEvent start ###################
+[17/10/06 15:09:31.883][ INFO][com.filter.ApplicationListenerBean -34   ] - ContextRefreshedEvent end ###################
+[17/10/06 15:09:31.889][ INFO][com.test.TableDateTransfer         -103  ] - getEntityTypeAsList starts
+[17/10/06 15:09:31.894][ INFO][com.test.TableDateTransfer         -115  ] - getEntityTypeAsList urlStr: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+[17/10/06 15:09:31.975][ INFO][com.util.Util                      -243  ] - sendHttpPostRequest start input - IOException: java.io.IOException: Server returned HTTP response code: 500 for URL: http://localhost:8080/Info360WebAPI/RESTful/getResource/CallLog
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1876)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at com.util.Util.sendHttpPostRequest(Util.java:230)
+	at com.test.TableDateTransfer.run(TableDateTransfer.java:120)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+[17/10/06 15:09:31.977][ INFO][com.test.TableDateTransfer         -122  ] - getEntityTypeAsList result: 
+[17/10/06 15:09:31.978][ INFO][com.test.TableDateTransfer         -124  ] - getEntityTypeAsList ends

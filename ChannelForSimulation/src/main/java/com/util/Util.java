@@ -178,7 +178,7 @@ public class Util {
 
 	public static String getHostURLStr(String aHost){
 		
-		String protocol = Attr.SystemParam.get(aHost + "_protocol");
+		String protocol = Attr.SystemParam.get(aHost + "_protocol") + ":";
 		String hostname = Attr.SystemParam.get(aHost + "_hostname");
 		String port = Attr.SystemParam.get(aHost + "_port");
 		
