@@ -90,7 +90,7 @@
 				</div>
 		
 				<div class="form-group col-sm-12 nopadding-horizontal">
-					<label for="typeID" class="col-sm-1"> 資料表編號: </label>
+					<label for="typeID" class="col-sm-1"> 資料編號: </label>
 					<div class="col-sm-4">
 						<input type="text" class="input" id="typeID" v-model="typeID">
 					</div>
@@ -140,8 +140,13 @@
 						<action action_name="dialin" v-bind:my_parent="rootObj">撥打外線分機</action>
 						<div class="spacer10"></div>
 						<action action_name="dialinrsp" v-bind:my_parent="rootObj">接受外線分機</action>
+						<action action_name="dialinrsp_reject" v-bind:my_parent="rootObj">拒絕外線分機</action>
 						<div class="spacer10"></div>
 						<action action_name="agent_leavedialinroom" v-bind:my_parent="rootObj">離開外線分機通話</action>
+						<div class="spacer10"></div>
+						<action action_name="loginvoice" v-bind:my_parent="rootObj">語音話機登入通知</action>
+						<div class="spacer10"></div>
+						<action action_name="logoutvoice" v-bind:my_parent="rootObj">語音話機離開通知</action>
 <!-- 						<div class="spacer10"></div> -->
 <!-- 						<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方邀請</action> -->
 <!-- 						<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方回應</action> -->

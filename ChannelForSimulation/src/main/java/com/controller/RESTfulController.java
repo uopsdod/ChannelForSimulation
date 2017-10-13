@@ -15,11 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.agent.AcceptEventRunnable;
+import com.agent.DialInRspRejectRunnable;
 import com.agent.DialInRspRunnable;
 import com.agent.DialInRunnable;
 import com.agent.Inviteagentthirdpartyvoice_ThirdPartyRunnable;
 import com.agent.Inviteagentthirdpartyvoice_TransferRunnable;
 import com.agent.LeaveRoomRunnable;
+import com.agent.LoginVoiceRunnable;
+import com.agent.LogoutVoiceRunnable;
 import com.agent.RejectEventRunnable;
 import com.agent.ResponseAgentthirdpartyvoice_ThirdPartyRunnable;
 import com.agent.ResponseAgentthirdpartyvoice_TransferRunnable;
@@ -121,6 +124,15 @@ public class RESTfulController {
     		break;
     	case "dialinrsp":
     		scheduledExecutorService.submit(new DialInRspRunnable());
+    		break;
+    	case "dialinrsp_reject":
+    		scheduledExecutorService.submit(new DialInRspRejectRunnable());
+    		break;
+    	case "loginvoice":
+    		scheduledExecutorService.submit(new LoginVoiceRunnable());
+    		break;
+    	case "logoutvoice":
+    		scheduledExecutorService.submit(new LogoutVoiceRunnable());
     		break;
     	case "agent_leavedialinroom":
 //    		scheduledExecutorService.submit(new LeaveRoomRunnable(TestUtil.dialInRoomID, "leavedialinroom"));

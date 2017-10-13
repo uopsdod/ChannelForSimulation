@@ -14,7 +14,7 @@ import com.bean.GetEntityTypeAsListCallable;
 import com.test.TableDateTransfer;
 import com.util.Util;
 
-public class ApplicationListenerBean implements ApplicationListener {
+public class ApplicationListenerBean implements ApplicationListener { 
 	
 	@Autowired
 	private ScheduledExecutorService scheduledExecutorService;
@@ -26,9 +26,9 @@ public class ApplicationListenerBean implements ApplicationListener {
         	Util.getFileLogger().info("ContextRefreshedEvent start ###################");
      		 
     		/** 更新EntityType Enum **/
-//    		scheduledExecutorService.submit(new GetEntityTypeAsListCallable());
+    		scheduledExecutorService.submit(new GetEntityTypeAsListCallable());
         	
-    		scheduledExecutorService.submit(new TableDateTransfer());
+//    		scheduledExecutorService.submit(new TableDateTransfer());
     		
         	Util.getConsoleLogger().info("ContextRefreshedEvent end ###################");
         	Util.getFileLogger().info("ContextRefreshedEvent end ###################");
