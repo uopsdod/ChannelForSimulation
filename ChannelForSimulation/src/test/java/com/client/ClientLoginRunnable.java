@@ -32,6 +32,11 @@ public class ClientLoginRunnable implements Runnable{
 	@Override
 	public void run() {
 		
+		/** Login **/
+		TestUtil.userID_client = UUID.randomUUID().toString();
+		TestUtil.callID_client = UUID.randomUUID().toString();
+		TestUtil.roomID = UUID.randomUUID().toString();
+		TestUtil.dialInRoomID = UUID.randomUUID().toString();
 
 		/** senduserdata **/
 //		url : RESTful_protocol+"//"+RESTful_hostname+":"+RESTful_port+"/"+RESTful_project+"/RESTful/searchUserdataNew",		
@@ -93,11 +98,7 @@ public class ClientLoginRunnable implements Runnable{
 		Util.getFileLogger().info("processRequest - getClickResponse entryLogResultJson: " + entryLogResultJson);
 		
 			
-		/** Login **/
-		TestUtil.userID_client = UUID.randomUUID().toString();
-		TestUtil.callID_client = UUID.randomUUID().toString();
-		TestUtil.roomID = UUID.randomUUID().toString();
-		TestUtil.dialInRoomID = UUID.randomUUID().toString();
+
 		
 		LoginBean loginBean = new LoginBean();
 		loginBean.setACtype("Client");
