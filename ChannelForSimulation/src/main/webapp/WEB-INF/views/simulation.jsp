@@ -135,7 +135,7 @@
 						<action action_name="accept_event" v-bind:my_parent="rootObj">接受客戶請求</action>
 						<action action_name="agent_rejectevent" v-bind:my_parent="rootObj">拒絕客戶請求</action>
 						<div class="spacer10"></div>
-						<action action_name="agent_leaveroom" v-bind:my_parent="rootObj">離開一般通話</action>
+						<action action_name="agent_leaveroom" v-bind:my_parent="rootObj">離開一般通話(須先按下"更新房間資訊")</action>
 						<div class="spacer10"></div>
 						<action action_name="dialin" v-bind:my_parent="rootObj">撥打外線分機</action>
 						<div class="spacer10"></div>

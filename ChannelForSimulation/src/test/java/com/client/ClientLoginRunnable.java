@@ -96,6 +96,8 @@ public class ClientLoginRunnable implements Runnable{
 		/** Login **/
 		TestUtil.userID_client = UUID.randomUUID().toString();
 		TestUtil.callID_client = UUID.randomUUID().toString();
+		TestUtil.roomID = UUID.randomUUID().toString();
+		TestUtil.dialInRoomID = UUID.randomUUID().toString();
 		
 		LoginBean loginBean = new LoginBean();
 		loginBean.setACtype("Client");
