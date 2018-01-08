@@ -21,25 +21,25 @@ public class TestUtil{
 	public static String callID_client = UUID.randomUUID().toString();
 //	public static String userName_client = "User_" + UUID.randomUUID().toString().substring(0,3);
 	public static String userName_client = "A123456789";
-	public static String pilotID_client = "10";
+	public static String pilotID_client = "1";
 	
 //	public static String userID_agent = UUID.randomUUID().toString();
 
-	public static String userID_agent = "109";
+	public static String userID_agent = "101";
 //	public static String dialNO_agent = "19191";
-	public static String dialNO_agent = "813";
+	public static String dialNO_agent = "811";
 //	public static String userName_agent = "User_" + UUID.randomUUID().toString().substring(0,3);
 	public static String userName_agent = "BochiLin";
 	
-	public static String userID_agent02 = "102";
-	public static String dialNO_agent02 = "815";
+	public static String userID_agent02 = "103";
+	public static String dialNO_agent02 = "812";
 	public static String userName_agent02 = "User_" + UUID.randomUUID().toString().substring(0,3);
 	
 	public static String roomID = UUID.randomUUID().toString();
 	public static String dialInRoomID = UUID.randomUUID().toString();
 	
 	public static String tenantID = "3";
-	public static String typeID = "3";
+	public static String typeID = "2";
 	public static String userdata = null;
 	public static String entityTypeID; // ApplicationListenerBean的時候更新
 	public static String QueueName = AmqpUtil.QUEUE_NAME.BACKEND_TO_VOICE_QUEUE;

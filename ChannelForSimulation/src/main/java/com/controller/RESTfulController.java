@@ -27,6 +27,7 @@ import com.agent.RejectEventRunnable;
 import com.agent.ResponseAgentthirdpartyvoice_ThirdPartyRunnable;
 import com.agent.ResponseAgentthirdpartyvoice_TransferRunnable;
 import com.agent.RspSenduserdataRunnable;
+import com.agent.StayInthirdpartyRunnable;
 import com.agent.UpdateStatusNotReadyRunnable;
 import com.agent.UpdateStatusReadyRunnable;
 import com.client.ClientExitRunnable;
@@ -115,6 +116,12 @@ public class RESTfulController {
     		break;
     	case "responseagentthirdpartyvoice_transferrunnable":
     		scheduledExecutorService.submit(new ResponseAgentthirdpartyvoice_TransferRunnable());
+    		break;
+    	case "stayinthirdpartyrunnable_no":
+    		scheduledExecutorService.submit(new StayInthirdpartyRunnable("no"));
+    		break;
+    	case "stayinthirdpartyrunnable_yes":
+    		scheduledExecutorService.submit(new StayInthirdpartyRunnable("yes"));
     		break;
     	case "setinteraction":
     		scheduledExecutorService.submit(new SetInteractionRunnable());

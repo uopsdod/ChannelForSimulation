@@ -147,9 +147,11 @@
 						<action action_name="loginvoice" v-bind:my_parent="rootObj">語音話機登入通知</action>
 						<div class="spacer10"></div>
 						<action action_name="logoutvoice" v-bind:my_parent="rootObj">語音話機離開通知</action>
-<!-- 						<div class="spacer10"></div> -->
-<!-- 						<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方邀請</action> -->
-<!-- 						<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方回應</action> -->
+						<div class="spacer10"></div>
+						<action action_name="inviteagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方邀請</action>
+						<action action_name="responseagentthirdpartyvoice_thirdpartyrunnable" v-bind:my_parent="rootObj">三方回應</action>
+						<action action_name="stayinthirdpartyrunnable_yes" v-bind:my_parent="rootObj">三方邀請者留下</action>
+						<action action_name="stayinthirdpartyrunnable_no" v-bind:my_parent="rootObj">三方邀請者離開</action>
 <!-- 						<div class="spacer10"></div> -->
 <!-- 						<action action_name="inviteagentthirdpartyvoice_transferrunnable" v-bind:my_parent="rootObj">轉接邀請</action> -->
 <!-- 						<action action_name="responseagentthirdpartyvoice_transferrunnable" v-bind:my_parent="rootObj">轉接回應</action> -->
