@@ -241,8 +241,8 @@ function getRabbitMQ_status(){
 }
 
 function getTblSystemMonitor(){
-	var url_tblSystemMonitor = "http://localhost:8082/Info360WebAPI/RESTful/getResource/tblSystemMonitor";
-//  var url_backend = "http://localhost:8002/health"; // testing
+// 	var url_tblSystemMonitor = "http://localhost:8082/Info360WebAPI/RESTful/getResource/tblSystemMonitor";
+	var url_tblSystemMonitor = "http://localhost:8080/Info360WebAPI/RESTful/getResource/tblSystemMonitor";
 	
 	$.post( url_tblSystemMonitor , function( data ) {
 //		console.log("url_tblSystemMonitor: " , data);
