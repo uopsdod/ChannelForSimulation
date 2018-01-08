@@ -73,7 +73,8 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 </head>
-<body>
+<body onbeforeunload="return cleanup()">
+	<div class="spacer10"></div>
 	<div class="form-group col-sm-12">
 		<div id="watchdog_root">
 			<div class="form-group col-sm-12 box center">
@@ -117,21 +118,27 @@ Vue.component('watchdogbody',{
 	props: ['initParam01'],
 	data(){
 	  	return {
-	  		systemList : JSON.parse('[{"name":"RabbitMQ","status":"UP"},{"name":"DB","status":"DOWN"}]')
+// 	  		systemList : JSON.parse('[{"name":"RabbitMQ","status":"UP"},{"name":"DB","status":"DOWN"}]')
+	  		systemList : JSON.parse('[]')
 	  	}
 	},
 	methods:{
 		update(obj){
 			console.log('update obj: ' , obj);
-			this.systemList = obj.systemList;
+			var tmpSystemList = [];
+			for (var index in obj.systemList) {
+			    console.log(index + " -> " , obj.systemList[index]);
+			    tmpSystemList.push(obj.systemList[index]);
+			}
+			this.systemList = tmpSystemList;
 		}
 	},
     created(){
 		Event.$on('systemlistrefreshed',this.update);
     },
     mounted() { // 測試區
-	   	let outputtest = JSON.parse('{ "systemList" : [{"name":"RabbitMQ","status":"UP"},{"name":"DB","status":"DOWN"},{"name":"VOICE","status":"UP"}] }')
-	   	Event.$emit('systemlistrefreshed', outputtest); // 更新list方式
+// 	   	let outputtest = JSON.parse('{ "systemList" : [{"name":"RabbitMQ","status":"UP"},{"name":"DB","status":"DOWN"},{"name":"VOICE","status":"UP"}] }')
+// 	   	Event.$emit('systemlistrefreshed', outputtest); // 更新list方式
     }
 })
 
@@ -147,74 +154,121 @@ var watchdog_root = new Vue({
 <!-- JS -->
 <script>
 var watchdog_obj_g = {
-	systemList : []
+	systemList : JSON.parse('{}')
 }
+
+var updateStatus_interval_g;
 
 $(document).ready(function () {
     console.log("doc ready");
     
+    init();
+    
+    updateStatus_interval_g = setInterval(function(){
+    	
+	    // backend
+		getRabbitMQ_status();
+	
+		// tblSystemMonitor 
+		getTblSystemMonitor();
+		
+		console.log("watchdog_obj_g.systemList: " , watchdog_obj_g.systemList);
+		
+		// 更新
+		Event.$emit('systemlistrefreshed', watchdog_obj_g); // 更新list方式
+    }, 2000);
+    
+}); // end of $(document).ready(function ()
+		
+function init(){
     // backend
+	getRabbitMQ_status();
+
+	// tblSystemMonitor 
+	getTblSystemMonitor();
+	
+	console.log("watchdog_obj_g.systemList: " , watchdog_obj_g.systemList);
+	
+	// 更新
+	Event.$emit('systemlistrefreshed', watchdog_obj_g); // 更新list方式	
+}		
+
+function cleanup(){
+	// 停掉更新狀態機制
+	clearInterval(updateStatus_interval_g);
+}
+
+function getRabbitMQ_status(){
+	
     var url_backend = "http://localhost:8080/BackendService/health";
-//     var url_backend = "http://localhost:8002/health"; // testing
+//  var url_backend = "http://localhost:8002/health"; // testing
 	$.get( url_backend , function( data ) {
 		console.log("url_backend: " , data);
 	})
 	.always(function(data) {
-// 		console.log("always url_backend: " , data);
+//		console.log("always url_backend: " , data);
 		// rabbutMQ server
 		console.log("always url_backend.responseJSON: " , data.responseJSON);
 		$.each( data.responseJSON, function( key, val ) {
-// 			console.log( key , ": " , val );
+//			console.log( key , ": " , val );
+			var tmpName = "RabbeMQ Server";
 			if ("rabbit" == key){
 				var system = {
-				    name : "RabbeMQ Server"
+				    name : tmpName
 				    ,status  : val.status
 				};
-				watchdog_obj_g.systemList.push(system); // 重要
+// 				watchdog_obj_g.systemList.push(system); // 重要
+				watchdog_obj_g.systemList[tmpName] = system;// 重要
 			}
 		});
 		
 		// rabbitMQ queues
 		console.log("always url_backend.responseJSON.rabbitQueueCheck: " , data.responseJSON.rabbitQueueCheck);
 		$.each( data.responseJSON.rabbitQueueCheck, function( key, val ) {
-// 			console.log( key , ": " , val );
+//			console.log( key , ": " , val );
 			if ("status" != key){
 				var system = {
 				    name : key
 				    ,status  : val.status
 				};
-				watchdog_obj_g.systemList.push(system); // 重要
+// 				watchdog_obj_g.systemList.push(system); // 重要
+				watchdog_obj_g.systemList[key] = system;// 重要
 			}
 		});		
 		
 		
-		console.log("watchdog_obj_g.systemList: " , watchdog_obj_g.systemList);
-	});
+	});	
+}
+
+function getTblSystemMonitor(){
+	var url_tblSystemMonitor = "http://localhost:8082/Info360WebAPI/RESTful/getResource/tblSystemMonitor";
+//  var url_backend = "http://localhost:8002/health"; // testing
 	
-	// channelForWeb
-//     var url_channelForWeb = "http://localhost:8080/ChannelForWeb/health";
-// //     var url_channelForWeb = "http://localhost:8006/health"; // testing
-// 	$.get( url_channelForWeb , function( data ) {
-// // 		console.log("url_channelForWeb: " , data);
-// 	})
-// 	.always(function(data) {
-// 		console.log("always url_channelForWeb: " , data);
-// // 		console.log("always url_channelForWeb.responseJSON: " , data.responseJSON);
-// 		$.each( data, function( key, val ) {
-// 			console.log( key , ": " , val );
-// 			if ("status" == key){
-// 				var system = {
-// 				    name : 'ChannelForWeb'
-// 				    ,status  : val
-// 				};
-// 				watchdog_obj_g.systemList.push(system); // 重要
-// 			}
-// 		});
-// 		console.log("watchdog_obj_g.systemList: " , watchdog_obj_g.systemList);
-// 	});	
-    
-	// 更新
-	Event.$emit('systemlistrefreshed', watchdog_obj_g); // 更新list方式
-});
+	$.post( url_tblSystemMonitor , function( data ) {
+//		console.log("url_tblSystemMonitor: " , data);
+		console.log("always url_tblSystemMonitor: " , data);
+		$.each( data, function( key, val ) {
+			console.log( key , ": " , val );
+			var now_ts = new Date().getTime();
+			var ts = val.timestamp;
+			var timeDiff = Math.abs(now_ts - ts);
+			var diffSec = Math.ceil(timeDiff / (1000));
+			console.log("diffSec: " , diffSec);
+			var status = "DOWN";
+			if (diffSec <= 10) status = "UP";
+			
+			var system = {
+				    name : val.name
+				    ,status  : status
+				};
+// 			watchdog_obj_g.systemList.push(system); // 重要
+			watchdog_obj_g.systemList[val.name] = system;// 重要
+		});
+	})	
+}
+
+
+
+
 </script>
 </html>
