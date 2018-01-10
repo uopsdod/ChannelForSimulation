@@ -109,7 +109,8 @@ Vue.component('watchdogbody',{
 			      	<span v-if='system.status != "DOWN"' >{{system.status}}</span>
 			      </td>
 			      <td>
-			      	{{system.q_count}}
+			      	<span v-if='system.q_count > 1' style="color: #d64262">{{system.q_count}}</span>
+			      	<span v-if='system.q_count <= 1' >{{system.q_count}}</span>
 			      </td>
 			   </tr>
 			</tbody>

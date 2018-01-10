@@ -5434,3 +5434,28 @@
 [18/01/10 15:15:37.728][ INFO][com.filter.ApplicationListenerBean -51   ] - attempt to shutdown executor
 [18/01/10 15:15:37.742][ INFO][com.filter.ApplicationListenerBean -63   ] - shutdown finished
 [18/01/10 15:15:37.743][ INFO][com.filter.ApplicationListenerBean -68   ] - ContextClosedEvent end ###################
+[18/01/10 15:22:00.592][ INFO][com.util.Util                      -65   ] - Util() start
+[18/01/10 15:22:00.593][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[18/01/10 15:22:00.593][ INFO][com.util.Util                      -69   ] - Util() end
+[18/01/10 15:22:03.638][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[18/01/10 15:22:03.712][ INFO][com.filter.ApplicationListenerBean -27   ] - ContextRefreshedEvent start ###################
+[18/01/10 15:22:03.716][ INFO][com.filter.ApplicationListenerBean -35   ] - ContextRefreshedEvent end ###################
+[18/01/10 15:22:03.787][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[18/01/10 15:22:03.795][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://192.168.10.126:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[18/01/10 15:22:03.877][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[18/01/10 15:22:03.877][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
+[18/01/10 15:23:25.677][ INFO][com.filter.ApplicationListenerBean -40   ] - ContextClosedEvent start ###################
+[18/01/10 15:23:25.677][ INFO][com.filter.ApplicationListenerBean -44   ] - contextDestroyed() called
+[18/01/10 15:23:25.678][ INFO][com.filter.ApplicationListenerBean -51   ] - attempt to shutdown executor
+[18/01/10 15:23:25.679][ INFO][com.filter.ApplicationListenerBean -63   ] - shutdown finished
+[18/01/10 15:23:25.679][ INFO][com.filter.ApplicationListenerBean -68   ] - ContextClosedEvent end ###################
+[18/01/10 15:23:30.676][ INFO][com.util.Util                      -65   ] - Util() start
+[18/01/10 15:23:30.676][ INFO][com.util.Util                      -68   ] - Util - ChannelForSimulation version: v1.0.0
+[18/01/10 15:23:30.677][ INFO][com.util.Util                      -69   ] - Util() end
+[18/01/10 15:23:32.612][ INFO][com.spring.RabbitListenerRegister  -40   ] - IN configureRabbitListeners ends
+[18/01/10 15:23:32.620][ INFO][com.filter.ApplicationListenerBean -27   ] - ContextRefreshedEvent start ###################
+[18/01/10 15:23:32.628][ INFO][com.filter.ApplicationListenerBean -35   ] - ContextRefreshedEvent end ###################
+[18/01/10 15:23:32.667][ INFO][com.bean.GetEntityTypeAsListCallable-47   ] - getEntityTypeAsList starts
+[18/01/10 15:23:32.669][ INFO][com.bean.GetEntityTypeAsListCallable-56   ] - getEntityTypeAsList urlStr: http://192.168.10.126:8080/Info360WebAPI/RESTful/getEntityTypeAsList
+[18/01/10 15:23:32.704][ INFO][com.bean.GetEntityTypeAsListCallable-63   ] - getEntityTypeAsList result: [{"dbid":1,"entityTypeID":"1","entityTypeName":"voice","entityDescription":"語音"},{"dbid":2,"entityTypeID":"2","entityTypeName":"webchat","entityDescription":"Webchat"},{"dbid":3,"entityTypeID":"3","entityTypeName":"wechat","entityDescription":"WeChat"},{"dbid":4,"entityTypeID":"4","entityTypeName":"line","entityDescription":"Line"},{"dbid":5,"entityTypeID":"5","entityTypeName":"fb","entityDescription":"Facebook"},{"dbid":6,"entityTypeID":"6","entityTypeName":"email","entityDescription":"電子信箱"},{"dbid":7,"entityTypeID":"7","entityTypeName":"fax","entityDescription":"傳真"},{"dbid":8,"entityTypeID":"8","entityTypeName":"robot","entityDescription":"機器人"}]
+[18/01/10 15:23:32.704][ INFO][com.bean.GetEntityTypeAsListCallable-65   ] - getEntityTypeAsList ends
