@@ -60,7 +60,7 @@ import com.spring.SpringContextHolder;
 public class Util {
 	
 	private static Gson gson;
-	
+
 	public Util(Gson aGson, VersionBean versionBean){
 		Util.getFileLogger().info("Util() start");
 		Util.gson = aGson;

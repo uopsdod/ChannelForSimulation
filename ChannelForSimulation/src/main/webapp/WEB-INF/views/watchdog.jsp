@@ -96,19 +96,20 @@ Vue.component('watchdogbody',{
 			  	<tr>
 					<th style="width: 25%;"> 系統名稱 </th>
 					<th style="width: 25%;"> 系統狀態 </th>
+					<th style="width: 25%;"> 連線人數 </th>
 				</tr>
 			</thead>
 			<tbody>
 			   <tr v-for="system in systemList">
 			      <td>
-			      	<div >
-				      	{{system.name}}
-			      	</div>
-			         
+				      {{system.name}}
 			      </td>
 			      <td>
 			      	<span v-if='system.status == "DOWN"' style="color: #d64262">{{system.status}}</span>
 			      	<span v-if='system.status != "DOWN"' >{{system.status}}</span>
+			      </td>
+			      <td>
+			      	{{system.q_count}}
 			      </td>
 			   </tr>
 			</tbody>
@@ -199,16 +200,38 @@ function cleanup(){
 }
 
 function getRabbitMQ_status(){
-	
-    var url_backend = "http://localhost:8080/BackendService/health";
+	getRabbitMQ_status_metrics();
+}
+
+function getRabbitMQ_status_metrics(){
+//     var url_backend_metrics = "http://localhost:8080/BackendService/metrics";
+    var url_backend_metrics = "${BACKEND_protocol}://${BACKEND_hostname}:${BACKEND_port}/${BACKEND_project}/metrics";
+    console.log("url_backend_metrics: " , url_backend_metrics);
 //  var url_backend = "http://localhost:8002/health"; // testing
-	$.get( url_backend , function( data ) {
-		console.log("url_backend: " , data);
+	$.get( url_backend_metrics , function( data ) {
+		console.log("url_backend_metrics: " , data);
 	})
 	.always(function(data) {
-//		console.log("always url_backend: " , data);
 		// rabbutMQ server
-		console.log("always url_backend.responseJSON: " , data.responseJSON);
+		console.log("always url_backend_metrics: " , data);
+		console.log("always url_backend_metrics_test: " , data['rabbit.queue.CHANNEL_TO_BACKEND_QUEUE01.currentMessageCount']);
+		
+		getRabbitMQ_status_health(data);
+		
+	});		
+}
+
+function getRabbitMQ_status_health(metrics){
+//     var url_backend_health = "http://localhost:8080/BackendService/health";
+    var url_backend_health = "${BACKEND_protocol}://${BACKEND_hostname}:${BACKEND_port}/${BACKEND_project}/health";
+    console.log("url_backend_health: " , url_backend_health);
+//  var url_backend = "http://localhost:8002/health"; // testing
+	$.get( url_backend_health , function( data ) {
+// 		console.log("url_backend_health: " , data);
+	})
+	.always(function(data) {
+		// rabbutMQ server
+		console.log("always url_backend_health.responseJSON: " , data.responseJSON);
 		$.each( data.responseJSON, function( key, val ) {
 //			console.log( key , ": " , val );
 			var tmpName = "RabbeMQ Server";
@@ -223,26 +246,31 @@ function getRabbitMQ_status(){
 		});
 		
 		// rabbitMQ queues
-		console.log("always url_backend.responseJSON.rabbitQueueCheck: " , data.responseJSON.rabbitQueueCheck);
-		$.each( data.responseJSON.rabbitQueueCheck, function( key, val ) {
-//			console.log( key , ": " , val );
-			if ("status" != key){
-				var system = {
-				    name : key
-				    ,status  : val.status
-				};
-// 				watchdog_obj_g.systemList.push(system); // 重要
-				watchdog_obj_g.systemList[key] = system;// 重要
-			}
-		});		
-		
-		
-	});	
+		if (data.responseJSON) {
+			console.log("always url_backend_health.responseJSON.rabbitQueueCheck: " , data.responseJSON.rabbitQueueCheck);
+			$.each( data.responseJSON.rabbitQueueCheck, function( key, val ) {
+	//			console.log( key , ": " , val );
+				if ("status" != key){
+					var system = {
+					    name : key
+					    ,status  : val.status
+					    ,q_count : metrics['rabbit.queue.' + key + '.currentConsumerCount']
+					};
+	// 				watchdog_obj_g.systemList.push(system); // 重要
+					watchdog_obj_g.systemList[key] = system;// 重要
+				}
+			});
+		}
+	});		
 }
+
+
 
 function getTblSystemMonitor(){
 // 	var url_tblSystemMonitor = "http://localhost:8082/Info360WebAPI/RESTful/getResource/tblSystemMonitor";
-	var url_tblSystemMonitor = "http://localhost:8080/Info360WebAPI/RESTful/getResource/tblSystemMonitor";
+// 	var url_tblSystemMonitor = "http://localhost:8080/Info360WebAPI/RESTful/getResource/tblSystemMonitor";
+	var url_tblSystemMonitor = "${RESTful_protocol}://${RESTful_hostname}:${RESTful_port}/${RESTful_project}/RESTful/getResource/tblSystemMonitor";
+	console.log("url_tblSystemMonitor: " , url_tblSystemMonitor);
 	
 	$.post( url_tblSystemMonitor , function( data ) {
 //		console.log("url_tblSystemMonitor: " , data);
