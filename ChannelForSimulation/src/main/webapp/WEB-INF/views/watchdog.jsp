@@ -115,6 +115,30 @@ Vue.component('watchdogbody',{
 			   </tr>
 			</tbody>
 		</table>
+
+		<table id="watchdogbodyTable_config" class="table table-striped table-bordered table-hover no-footer dataTable" aria-describedby="watchdogbodyTable_config_info" style="width: 100%;">
+			<thead>
+			  	<tr>
+					<th style="width: 18%;"> 系統名稱 </th>
+					<th style="width: 14%;"> 參數一 </th>
+					<th style="width: 17%;"> 參數二 </th>
+					<th style="width: 17%;"> 參數三 </th>
+					<th style="width: 17%;"> 參數四 </th>
+					<th style="width: 17%;"> 更新時間 </th>
+				</tr>
+			</thead>		
+			   <tr v-for="config in configList">
+			      <td>
+				      {{config.name}}
+			      </td>
+			      <td><span >{{config.param01}}</span></td>
+			      <td><span >{{config.param02}}</span></td>
+			      <td><span >{{config.param03}}</span></td>
+			      <td><span >{{config.param04}}</span></td>
+			      <td><span >{{config.timegap}}</span></td>
+			   </tr>
+	  	 </table>
+		
 	</div> 
 	`, // end of template
 	props: ['initParam01'],
@@ -122,17 +146,40 @@ Vue.component('watchdogbody',{
 	  	return {
 // 	  		systemList : JSON.parse('[{"name":"RabbitMQ","status":"UP"},{"name":"DB","status":"DOWN"}]')
 	  		systemList : JSON.parse('[]')
+	  		,configList : JSON.parse('[]')
 	  	}
 	},
 	methods:{
-		update(obj){
+		update(obj){ 
 			console.log('update obj: ' , obj);
+			// system
 			var tmpSystemList = [];
 			for (var index in obj.systemList) {
 			    console.log(index + " -> " , obj.systemList[index]);
 			    tmpSystemList.push(obj.systemList[index]);
 			}
 			this.systemList = tmpSystemList;
+			
+			// config
+			console.log('update obj.configList: ' , obj.configList);
+			var tmpConfigList = [];
+			for (var index in obj.configList) {
+			    console.log(index + " -> " , obj.configList[index]);
+			    tmpConfigList.push(obj.configList[index]);
+			}
+			
+			// 以各專案來區分
+			tmpConfigList.sort(function(a, b){
+				 var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+				 if (nameA < nameB) //sort string ascending
+				  return -1;
+				 if (nameA > nameB)
+				  return 1;
+				 return 0; //default return value (no sorting)
+				});
+			
+			this.configList = tmpConfigList;
+			
 		}
 	},
     created(){
@@ -157,6 +204,7 @@ var watchdog_root = new Vue({
 <script>
 var watchdog_obj_g = {
 	systemList : JSON.parse('{}')
+	,configList : JSON.parse('{}')
 }
 
 var updateStatus_interval_g;
@@ -173,6 +221,9 @@ $(document).ready(function () {
 	
 		// tblSystemMonitor 
 		getTblSystemMonitor();
+		
+		// config
+		getConfig();
 		
 		console.log("watchdog_obj_g.systemList: " , watchdog_obj_g.systemList);
 		
@@ -198,6 +249,52 @@ function init(){
 function cleanup(){
 	// 停掉更新狀態機制
 	clearInterval(updateStatus_interval_g);
+}
+
+function getConfig(){
+	var url_tblSystemMonitor_config = "${RESTful_protocol}://${RESTful_hostname}:${RESTful_port}/${RESTful_project}/RESTful/getResource/tblSystemMonitor_config";
+	console.log("url_tblSystemMonitor_config: " , url_tblSystemMonitor_config);
+	
+	$.post( url_tblSystemMonitor_config , function( data ) {
+//		console.log("url_tblSystemMonitor: " , data);
+		console.log("always url_tblSystemMonitor_config: " , data);
+		$.each( data, function( key, val ) {
+// 			console.log( key , ": " , val );
+			var now_ts = new Date().getTime();
+			var ts = val.timestamp;
+			var timeDiff = Math.abs(now_ts - ts);
+			var diffSec = Math.ceil(timeDiff / (1000));
+			console.log("diffSec: " , diffSec);
+			var diff = secondsToHms(diffSec);
+			console.log("diff: " , diff);
+// 			var status = "DOWN";
+// 			if (diffSec <= 10) status = "UP";
+			var system = null;
+			
+			if (val.db_url){
+				system = {
+					    name : val.name
+					    ,param01 : val.db_url
+					    ,param02 : val.ip
+					    ,param03 : val.db_username
+					    ,param04 : val.db_password
+					    ,timegap : diff
+					};
+			}else{
+				system = {
+					    name : val.name
+					    ,param01 : val.protocol
+					    ,param02 : val.ip
+					    ,param03 : val.port
+					    ,param04 : val.project
+					    ,timegap : diff
+					};
+			}
+
+// 			watchdog_obj_g.systemList.push(system); // 重要
+			watchdog_obj_g.configList[val.name] = system;// 重要
+		});
+	})	
 }
 
 function getRabbitMQ_status(){
@@ -291,12 +388,23 @@ function getTblSystemMonitor(){
 				    ,status  : status
 				};
 // 			watchdog_obj_g.systemList.push(system); // 重要
-			watchdog_obj_g.systemList[val.name] = system;// 重要
+			watchdog_obj_g.configList[val.name] = system;// 重要
 		});
 	})	
 }
 
+// convert secs
+function secondsToHms(d) {
+    d = Number(d);
+    var h = Math.floor(d / 3600);
+    var m = Math.floor(d % 3600 / 60);
+    var s = Math.floor(d % 3600 % 60);
 
+    var hDisplay = h > 0 ? h + (h == 1 ? " hr, " : " hrs, ") : "";
+    var mDisplay = m > 0 ? m + (m == 1 ? " min, " : " mins, ") : "";
+    var sDisplay = s > 0 ? s + (s == 1 ? " sec" : " secs") : "";
+    return hDisplay + mDisplay + sDisplay; 
+}
 
 
 </script>
