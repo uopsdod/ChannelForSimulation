@@ -100,7 +100,18 @@ Vue.component('watchdogbody',{
 				</tr>
 			</thead>
 			<tbody>
-			   <tr v-for="system in systemList">
+				<!-- 若沒有抓過任何一次資訊 -->
+			   <tr v-if="getSystemListLen == 0">
+				  <td colspan="3" style="color: #d64262"><span>BACKEND Server offline</span></td>
+			   </tr>
+			   <tr v-if="getSystemListLen == 0">
+				  <td colspan="3" style="color: #d64262"><span>RESTFUL Server offline</span></td>
+			   </tr>
+			   <!-- 若抓過任資訊  - backend -->
+			   <tr v-if="system.from == 'backend' && !getTimeGap(ts_backend)" v-for="(system, index) in systemList">
+				  <td v-if="index == 0" colspan="3" style="color: #d64262"><span>BACKEND Server offline</span></td>
+			   </tr>
+			   <tr v-if="system.from == 'backend' && getTimeGap(ts_backend)" v-for="system in systemList">
 			      <td>
 				      {{system.name}}
 			      </td>
@@ -111,6 +122,21 @@ Vue.component('watchdogbody',{
 			      <td>
 			      	<span v-if='system.q_count > 1' style="color: #d64262">{{system.q_count}}</span>
 			      	<span v-if='system.q_count <= 1' >{{system.q_count}}</span>
+			      </td>
+			   </tr>
+			   <!-- 若抓過任資訊  - restful -->
+			   <tr v-if="system.from == 'restful' && !getTimeGap(ts_rest)" v-for="(system, index) in systemList">
+			   		<td v-if="index == 0" colspan="3" style="color: #d64262"><span>RESTFUL Server offline</span></td>
+			   </tr>
+			   <tr v-if="system.from == 'restful' && getTimeGap(ts_rest)" v-for="system in systemList">
+			      <td>
+				      {{system.name}}
+			      </td>
+			      <td>
+			      	<span v-if='system.status == "DOWN"' style="color: #d64262">{{system.status}}</span>
+			      	<span v-if='system.status != "DOWN"' >{{system.status}}</span>
+			      </td>
+			      <td>
 			      </td>
 			   </tr>
 			</tbody>
@@ -127,16 +153,19 @@ Vue.component('watchdogbody',{
 					<th style="width: 17%;"> 更新時間 </th>
 				</tr>
 			</thead>		
-			   <tr v-for="config in configList">
-			      <td>
-				      {{config.name}}
-			      </td>
-			      <td><span >{{config.param01}}</span></td>
-			      <td><span >{{config.param02}}</span></td>
-			      <td><span >{{config.param03}}</span></td>
-			      <td><span >{{config.param04}}</span></td>
-			      <td><span >{{config.timegap}}</span></td>
-			   </tr>
+				<tr v-if="!getTimeGap(ts_rest)">
+					<td colspan="6" style="color: #d64262"><span>RESTFUL Server offline</span></td>
+				</tr>
+				<tr v-if="getTimeGap(ts_rest)" v-for="config in configList">
+				   <td>
+				    {{config.name}}
+				   </td>
+				   <td><span >{{config.param01}}</span></td>
+				   <td><span >{{config.param02}}</span></td>
+				   <td><span >{{config.param03}}</span></td>
+				   <td><span >{{config.param04}}</span></td>
+				   <td><span >{{config.timegap}}</span></td>
+				</tr>
 	  	 </table>
 		
 	</div> 
@@ -147,6 +176,10 @@ Vue.component('watchdogbody',{
 // 	  		systemList : JSON.parse('[{"name":"RabbitMQ","status":"UP"},{"name":"DB","status":"DOWN"}]')
 	  		systemList : JSON.parse('[]')
 	  		,configList : JSON.parse('[]')
+	  		,ts_rest : 0
+	  		,is_alive_rest : false
+	  		,ts_backend : 0
+	  		,is_alive__backend : false
 	  	}
 	},
 	methods:{
@@ -177,11 +210,51 @@ Vue.component('watchdogbody',{
 				  return 1;
 				 return 0; //default return value (no sorting)
 				});
-			
 			this.configList = tmpConfigList;
 			
+			// ts
+			this.ts_rest = obj.ts_rest;
+			this.ts_backend = obj.ts_backend;
+			
+		}
+		,getTimeGap(val){
+	        var now_ts = new Date().getTime();
+	        var timeDiff = Math.abs(now_ts - val);
+			var diffSec = Math.ceil(timeDiff / (1000));
+			console.log("getTimeGap diffSec: " + diffSec);
+			if (diffSec > 5){
+				return false;
+			}else{
+				return true;
+			}
 		}
 	},
+	computed : {
+	    // a computed getter
+	    getSystemListLen: function () {
+	      // `this` points to the vm instance
+	      console.log("this.systemList: " , this.systemList);
+	      return this.systemList.length;
+	    }		
+	},
+// 	watch: {
+// 		ts_rest: function (val) {
+// 			console.log("ts_rest val: " + val);
+// 			this.ts_rest = val;
+// 	        // `this` points to the vm instance
+// 	        var now_ts = new Date().getTime();
+// 	        var timeDiff = Math.abs(now_ts - val);
+// 			var diffSec = Math.ceil(timeDiff / (1000));
+// 			console.log("ts_rest diffSec: " + diffSec);
+			
+// 			if (diffSec > 5){
+// 				this.is_alive_rest = false;
+// 			}else{
+// 				this.is_alive_rest = true;
+// 			}
+			
+// 	    }		
+// 	},
     created(){
 		Event.$on('systemlistrefreshed',this.update);
     },
@@ -205,6 +278,8 @@ var watchdog_root = new Vue({
 var watchdog_obj_g = {
 	systemList : JSON.parse('{}')
 	,configList : JSON.parse('{}')
+	,ts_rest : 0
+	,ts_backend : 0
 }
 
 var updateStatus_interval_g;
@@ -240,6 +315,9 @@ function init(){
 	// tblSystemMonitor 
 	getTblSystemMonitor();
 	
+	// config
+	getConfig();
+	
 	console.log("watchdog_obj_g.systemList: " , watchdog_obj_g.systemList);
 	
 	// 更新
@@ -254,7 +332,6 @@ function cleanup(){
 function getConfig(){
 	var url_tblSystemMonitor_config = "${RESTful_protocol}://${RESTful_hostname}:${RESTful_port}/${RESTful_project}/RESTful/getResource/tblSystemMonitor_config";
 	console.log("url_tblSystemMonitor_config: " , url_tblSystemMonitor_config);
-	
 	$.post( url_tblSystemMonitor_config , function( data ) {
 //		console.log("url_tblSystemMonitor: " , data);
 		console.log("always url_tblSystemMonitor_config: " , data);
@@ -264,9 +341,9 @@ function getConfig(){
 			var ts = val.timestamp;
 			var timeDiff = Math.abs(now_ts - ts);
 			var diffSec = Math.ceil(timeDiff / (1000));
-			console.log("diffSec: " , diffSec);
+// 			console.log("diffSec: " , diffSec);
 			var diff = secondsToHms(diffSec);
-			console.log("diff: " , diff);
+// 			console.log("diff: " , diff);
 // 			var status = "DOWN";
 // 			if (diffSec <= 10) status = "UP";
 			var system = null;
@@ -293,6 +370,7 @@ function getConfig(){
 
 // 			watchdog_obj_g.systemList.push(system); // 重要
 			watchdog_obj_g.configList[val.name] = system;// 重要
+			watchdog_obj_g.ts_rest = now_ts;
 		});
 	})	
 }
@@ -307,7 +385,9 @@ function getRabbitMQ_status_metrics(){
     console.log("url_backend_metrics: " , url_backend_metrics);
 //  var url_backend = "http://localhost:8002/health"; // testing
 	$.get( url_backend_metrics , function( data ) {
-		console.log("url_backend_metrics: " , data);
+		console.log("url_backend_metrics success: " , data); // ajax get 方法一定會跑到 always, 而post則server不在的話，不會跑進always
+		var now_ts = new Date().getTime();
+		watchdog_obj_g.ts_backend = now_ts;
 	})
 	.always(function(data) {
 		// rabbutMQ server
@@ -315,6 +395,7 @@ function getRabbitMQ_status_metrics(){
 		console.log("always url_backend_metrics_test: " , data['rabbit.queue.CHANNEL_TO_BACKEND_QUEUE01.currentMessageCount']);
 		
 		getRabbitMQ_status_health(data);
+		
 		
 	});		
 }
@@ -337,6 +418,7 @@ function getRabbitMQ_status_health(metrics){
 				var system = {
 				    name : tmpName
 				    ,status  : val.status
+				    ,from : "backend"
 				};
 // 				watchdog_obj_g.systemList.push(system); // 重要
 				watchdog_obj_g.systemList[tmpName] = system;// 重要
@@ -353,6 +435,7 @@ function getRabbitMQ_status_health(metrics){
 					    name : key
 					    ,status  : val.status
 					    ,q_count : metrics['rabbit.queue.' + key + '.currentConsumerCount']
+						,from : "backend"
 					};
 	// 				watchdog_obj_g.systemList.push(system); // 重要
 					watchdog_obj_g.systemList[key] = system;// 重要
@@ -386,9 +469,10 @@ function getTblSystemMonitor(){
 			var system = {
 				    name : val.name
 				    ,status  : status
+				    ,from : "restful"
 				};
 // 			watchdog_obj_g.systemList.push(system); // 重要
-			watchdog_obj_g.configList[val.name] = system;// 重要
+			watchdog_obj_g.systemList[val.name] = system;// 重要
 		});
 	})	
 }
