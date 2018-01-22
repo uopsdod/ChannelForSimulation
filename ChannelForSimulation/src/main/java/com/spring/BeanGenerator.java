@@ -94,7 +94,7 @@ public class BeanGenerator {
 	 */
 	@Bean
 	public ScheduledExecutorService scheduledExecutorService(){
-		int threadNumber = 5;
+		int threadNumber = 8;
 		ScheduledExecutorService executor = Executors.newScheduledThreadPool(threadNumber);
 		return executor;
 	}
