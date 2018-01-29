@@ -5,13 +5,19 @@ import com.google.gson.JsonArray;
 public class ExitBean {
 	private String type;
 	private String userID;
+	private String entityTypeID;
 	private String channel;
 	private boolean waittingAgent; // for client
 	private String waittingAgentID; // for client
 	private JsonArray waittingClientIDList; // for agent
 	private JsonArray waittingAgentIDList; // for agent
 	
-	
+	public String getEntityTypeID() {
+		return entityTypeID;
+	}
+	public void setEntityTypeID(String entityTypeID) {
+		this.entityTypeID = entityTypeID;
+	}	
 	public String getType() {
 		return type;
 	}

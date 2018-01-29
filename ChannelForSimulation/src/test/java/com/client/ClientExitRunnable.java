@@ -27,9 +27,11 @@ public class ClientExitRunnable implements Runnable{
 		exitBean.setChannel(EntityTypeEnum.VOICE.getEntityTypeID());
 		exitBean.setType("exit");
 		exitBean.setUserID(TestUtil.userID_client);
+		exitBean.setEntityTypeID(EntityTypeEnum.VOICE.getEntityTypeID());
 //		exitBean.setWaittingAgent(false);
 //		exitBean.setWaittingAgentID(waittingAgentID); // cache
 		System.out.println("exitBean out");
+		System.out.println("json out: " + Util.getGson().toJson(exitBean,ExitBean.class));
 		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, Util.getGson().toJson(exitBean,ExitBean.class));
 	}
 }
