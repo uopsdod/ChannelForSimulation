@@ -141,7 +141,8 @@ Vue.component('watchdogbody',{
 			   </tr>
 			</tbody>
 		</table>
-
+	
+		<!-- 參數檔 -->
 		<table id="watchdogbodyTable_config" class="table table-striped table-bordered table-hover no-footer dataTable" aria-describedby="watchdogbodyTable_config_info" style="width: 100%;">
 			<thead>
 			  	<tr>
@@ -167,7 +168,37 @@ Vue.component('watchdogbody',{
 				   <td><span >{{config.timegap}}</span></td>
 				</tr>
 	  	 </table>
-		
+	  	 
+	  	<!-- 版本 -->
+		<table id="watchdogbodyTable_version" class="table table-striped table-bordered table-hover no-footer dataTable" aria-describedby="watchdogbodyTable_config_info" style="width: 100%;">
+			<thead>
+			  	<tr>
+					<th style="width: 18%;"> 系統名稱 </th>
+					<th style="width: 14%;"> 版本號 </th>
+				</tr>
+			</thead>		
+			<tr>
+			   <td><span >BACKEND</span></td>
+			   <td><span >${version_backend}</span></td>
+			</tr>
+			<tr>
+			   <td><span >WEB_CHANNEL</span></td>
+			   <td><span >${version_web_channel}</span></td>
+			</tr>
+			<tr>
+			   <td><span >INFO360</span></td>
+			   <td><span >${version_info360}</span></td>
+			</tr>
+			<tr>
+			   <td><span >WEBAPI</span></td>
+			   <td><span >${version_webapi}</span></td>
+			</tr>
+			<tr>
+			   <td><span >SIMULATION</span></td>
+			   <td><span >${version_simulation}</span></td>
+			</tr>
+ 	 	 </table>		
+	  	
 	</div> 
 	`, // end of template
 	props: ['initParam01'],

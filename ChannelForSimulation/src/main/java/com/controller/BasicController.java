@@ -2,12 +2,17 @@ package com.controller;
 
 
 
+import java.io.File;
+import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -84,7 +89,52 @@ public class BasicController {
 	public String watchdog(Map<String, String> model) {
 		model.put("message", "hello");
 		model.putAll(Util.getSystemParam());
+		
+		Map<String, String> versionParam = updateVersionParam();
+		
+		model.putAll(versionParam);
+		
 		return "watchdog";
+	}
+	
+	private Map<String, String> updateVersionParam() {
+		Map<String, String> versionParam = new HashMap<>();
+		try {
+			
+			ClassPathResource classPathResource = new ClassPathResource("version.properties");
+			System.out.println("classPathResource.getPath(): " +  classPathResource.getPath());
+			File file = classPathResource.getFile();
+			InputStream inputStream = classPathResource.getInputStream();
+			System.out.println("file.getName(): " +  file.getName());
+			
+			PropertiesConfiguration conf = new PropertiesConfiguration(classPathResource.getPath());
+			Util.getConsoleLogger().info("ContextRefreshedEvent conf: " + conf);
+			
+//			Map<String, String> versionParam = Util.getVersionParam();
+			
+			Object backend = conf.getProperty("backend");
+			Util.getConsoleLogger().info("ContextRefreshedEvent backend: " + backend);
+			versionParam.put("version_backend", backend.toString());
+			Object web_channel = conf.getProperty("web_channel");
+			Util.getConsoleLogger().info("ContextRefreshedEvent web_channel: " + web_channel);
+			versionParam.put("version_web_channel", web_channel.toString());
+			Object info360 = conf.getProperty("info360");
+			Util.getConsoleLogger().info("ContextRefreshedEvent info360: " + info360);
+			versionParam.put("version_info360", info360.toString());
+			Object webapi = conf.getProperty("webapi");
+			Util.getConsoleLogger().info("ContextRefreshedEvent webapi: " + webapi);
+			versionParam.put("version_webapi", webapi.toString());
+			Object simulation = conf.getProperty("simulation");
+			Util.getConsoleLogger().info("ContextRefreshedEvent simulation: " + simulation);
+			versionParam.put("version_simulation", simulation.toString());
+			
+			Util.getConsoleLogger().info("ContextRefreshedEvent versionParam: " + versionParam);
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return versionParam;
 	}
 	
 	
