@@ -34,6 +34,8 @@ public class UpdateStatusNotReadyRunnable implements Runnable{
 		updateStatusBean.setUserID(TestUtil.dialNO_agent); // 注意: 要每次調整
 		Util.getConsoleLogger().info("EntityTypeEnum.VOICE.getEntityTypeID(): " + EntityTypeEnum.VOICE.getEntityTypeID());
 		updateStatusBean.setEntityTypeID(EntityTypeEnum.VOICE.getEntityTypeID());
+		updateStatusBean.setReason_dbid("0");
+		Util.getConsoleLogger().info("json out: " + Util.getGson().toJson(updateStatusBean));
 //		String jsonOut = Util.getGson().toJson(updateStatusBean, UpdateStatusBean.class);
 		AmqpUtil.getAmqpTemplate().convertAndSend(AmqpUtil.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, Util.getGson().toJson(updateStatusBean));
 		
