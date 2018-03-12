@@ -197,6 +197,14 @@ Vue.component('watchdogbody',{
 			   <td><span >SIMULATION</span></td>
 			   <td><span >${version_simulation}</span></td>
 			</tr>
+		   <tr v-for="system in versionList">
+		      <td>
+			      {{system.name}}
+		      </td>
+		      <td>
+			      {{system.param01}}
+		      </td>
+		   </tr>
  	 	 </table>		
 	  	
 	</div> 
@@ -207,6 +215,7 @@ Vue.component('watchdogbody',{
 // 	  		systemList : JSON.parse('[{"name":"RabbitMQ","status":"UP"},{"name":"DB","status":"DOWN"}]')
 	  		systemList : JSON.parse('[]')
 	  		,configList : JSON.parse('[]')
+	  		,versionList : JSON.parse('[]')
 	  		,ts_rest : 0
 	  		,is_alive_rest : false
 	  		,ts_backend : 0
@@ -231,6 +240,15 @@ Vue.component('watchdogbody',{
 			    console.log(index + " -> " , obj.configList[index]);
 			    tmpConfigList.push(obj.configList[index]);
 			}
+			
+			// version
+			console.log('update obj.versionList: ' , obj.versionList);
+			var tmpVersionList = [];
+			for (var index in obj.versionList) {
+			    console.log(index + " -> " , obj.versionList[index]);
+			    tmpVersionList.push(obj.versionList[index]);
+			}
+			this.versionList = tmpVersionList;
 			
 			// 以各專案來區分
 			tmpConfigList.sort(function(a, b){
@@ -309,6 +327,7 @@ var watchdog_root = new Vue({
 var watchdog_obj_g = {
 	systemList : JSON.parse('{}')
 	,configList : JSON.parse('{}')
+	,versionList : JSON.parse('{}')
 	,ts_rest : 0
 	,ts_backend : 0
 }
@@ -368,17 +387,20 @@ function getConfig(){
 		console.log("always url_tblSystemMonitor_config: " , data);
 		$.each( data, function( key, val ) {
 // 			console.log( key , ": " , val );
+			console.log( val.name + " ans: " , val.name.indexOf("version") );
+			
+
 			var now_ts = new Date().getTime();
 			var ts = val.timestamp;
 			var timeDiff = Math.abs(now_ts - ts);
 			var diffSec = Math.ceil(timeDiff / (1000));
-// 			console.log("diffSec: " , diffSec);
+//	 		console.log("diffSec: " , diffSec);
 			var diff = secondsToHms(diffSec);
-// 			console.log("diff: " , diff);
-// 			var status = "DOWN";
-// 			if (diffSec <= 10) status = "UP";
+//	 		console.log("diff: " , diff);
+//	 		var status = "DOWN";
+//	 		if (diffSec <= 10) status = "UP";
 			var system = null;
-			
+				
 			if (val.db_url){
 				system = {
 					    name : val.name
@@ -398,11 +420,17 @@ function getConfig(){
 					    ,timegap : diff
 					};
 			}
+			
+			if (val.name.indexOf('version') != -1){
+				console.log( "version_matched: " , val );
+				watchdog_obj_g.versionList[val.name] = system;// 重要
+			}else{
+				watchdog_obj_g.configList[val.name] = system;// 重要				
+			}
 
-// 			watchdog_obj_g.systemList.push(system); // 重要
-			watchdog_obj_g.configList[val.name] = system;// 重要
-			watchdog_obj_g.ts_rest = now_ts;
-		});
+		}); // end of foreach 
+		var now_ts = new Date().getTime();
+		watchdog_obj_g.ts_rest = now_ts;
 	})	
 }
 
@@ -489,6 +517,7 @@ function getTblSystemMonitor(){
 		console.log("always url_tblSystemMonitor: " , data);
 		$.each( data, function( key, val ) {
 			console.log( key , ": " , val );
+			
 			var now_ts = new Date().getTime();
 			var ts = val.timestamp;
 			var timeDiff = Math.abs(now_ts - ts);
