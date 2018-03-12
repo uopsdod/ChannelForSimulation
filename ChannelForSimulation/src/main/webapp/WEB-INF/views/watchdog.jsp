@@ -177,26 +177,6 @@ Vue.component('watchdogbody',{
 					<th style="width: 14%;"> 版本號 </th>
 				</tr>
 			</thead>		
-			<tr>
-			   <td><span >BACKEND</span></td>
-			   <td><span >${version_backend}</span></td>
-			</tr>
-			<tr>
-			   <td><span >WEB_CHANNEL</span></td>
-			   <td><span >${version_web_channel}</span></td>
-			</tr>
-			<tr>
-			   <td><span >INFO360</span></td>
-			   <td><span >${version_info360}</span></td>
-			</tr>
-			<tr>
-			   <td><span >WEBAPI</span></td>
-			   <td><span >${version_webapi}</span></td>
-			</tr>
-			<tr>
-			   <td><span >SIMULATION</span></td>
-			   <td><span >${version_simulation}</span></td>
-			</tr>
 		   <tr v-for="system in versionList">
 		      <td>
 			      {{system.name}}
